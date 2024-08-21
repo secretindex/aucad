@@ -51,7 +51,6 @@ const About = () => {
       </Content>
       <RouterLink to={"/help"}>
         <Text className="text-[#26a69a]">
-          <br />
           Acesse as dicas e o tutorial aqui
         </Text>
       </RouterLink>
