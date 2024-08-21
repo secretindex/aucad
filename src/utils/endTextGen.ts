@@ -77,6 +77,7 @@ class EndText {
         campos.push((this.fields as RequiredDocs)[i as keyof RequiredDocs] === true ? "" : standardDocuments[i as keyof StandardDocuments])
       } else {
         let supportValue = (this.fields as FinalTextDocuments)[i as keyof FinalTextDocuments]
+        console.log(supportValue)
         support = supportValue === "dep/id/10" || supportValue === "id/10" ? this.supportNumber : ""
         campos.push(invalidDocuments[((this.fields as FinalTextDocuments)[i as keyof FinalTextDocuments] as keyof InvalidDocuments)])
       }
