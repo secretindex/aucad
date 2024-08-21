@@ -26,7 +26,7 @@ function TextGen() {
     textField?.setText("")
     docs?.setDocs((prev: RequiredDocs) => {
       for (let i in prev) {
-        prev[i] = false
+        prev[i as keyof RequiredDocs] = false
       }
 
       return prev
