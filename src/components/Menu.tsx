@@ -2,8 +2,8 @@ import { Layout, Menu, Typography, Image } from "antd"
 import {
   HomeOutlined,
   UserOutlined,
-  SettingOutlined,
   QuestionCircleOutlined,
+  ProfileOutlined
 } from "@ant-design/icons"
 import { Link } from "react-router-dom"
 import AucadLogo from "../assets/aucad horizontal.svg"
@@ -48,7 +48,7 @@ export default function MenuAnt() {
                 Cadastro
               </Link>
             </Item>
-            <Item key="3" icon={<SettingOutlined />}>
+            <Item key="3" icon={<ProfileOutlined/>}>
               <Link to="/pensionistas" className="text-inherit">
                 Pensionistas
               </Link>
@@ -60,7 +60,7 @@ export default function MenuAnt() {
             icon={<QuestionCircleOutlined />}
           >
             <Link to="/about" className="text-inherit">
-              About
+              Sobre
             </Link>
           </Item>
         </Menu>

@@ -50,7 +50,7 @@ const TextModal: React.FC = () => {
     <>
       {contextHolder}
       <Button type="primary" className="w-2/6" onClick={showModal}>
-        Analyze
+        Analisar
       </Button>
       <Modal
         title="Mensagem de Recusa"
