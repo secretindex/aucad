@@ -1,4 +1,4 @@
-import { useContext, Dispatch, SetStateAction, BaseSyntheticEvent  } from "react"
+import { useContext, useEffect, Dispatch, SetStateAction, BaseSyntheticEvent  } from "react"
 
 // TODO: Remove every material ui component remaining
 import FormGroup from "@mui/material/FormGroup"
@@ -20,6 +20,9 @@ interface LabelsProps {
 
 const CheckboxLabelsAnt: React.FC<LabelsProps> = ({ docs, setDocs }) => {
   const textField = useContext(TextFieldContext)
+  useEffect(() => {
+    textField?.setText("");
+  }, [])
 
   const handleChange: CheckboxProps["onChange"] = (e) => {
     console.log(e.target)

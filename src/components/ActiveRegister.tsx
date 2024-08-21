@@ -19,7 +19,7 @@ interface DocumentosOptionsProps {
   optionList?: OptList
 }
 
-import { useState, useContext, FC } from "react"
+import React, { useState, useContext, FC, useEffect, Dispatch, SetStateAction } from "react"
 import { Typography, Select, Form, Row, Col, Space, Layout } from "antd"
 import NestedSelect from "./SubComponents/NestedSelect"
 import TextModal from "./TextModal"
@@ -113,9 +113,19 @@ const DocumentOptions: React.FC<DocumentosOptionsProps> = ({
   )
 }
 
-const ComponentThree = () => {
+interface ComponentThreeProps {
+  setLoading: Dispatch<SetStateAction<boolean>>
+}
+
+const ComponentThree: React.FC<ComponentThreeProps> = ({ setLoading }) => {
   const docs = useContext(SecondCheckboxContext)
   const textField = useContext(TextFieldContext)
+
+  useEffect(() => {
+    return () => {
+      setLoading(false)
+    }
+  })
 
   const restartAction = () => {
     textField?.setText("")

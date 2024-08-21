@@ -76,7 +76,8 @@ class EndText {
       if (typeof (this.fields as RequiredDocs)[i as keyof RequiredDocs] !== "string") {
         campos.push((this.fields as RequiredDocs)[i as keyof RequiredDocs] === true ? "" : standardDocuments[i as keyof StandardDocuments])
       } else {
-        support = (this.fields as FinalTextDocuments)[i as keyof FinalTextDocuments] === "dep/id/10" ? this.supportNumber : ""
+        let supportValue = (this.fields as FinalTextDocuments)[i as keyof FinalTextDocuments]
+        support = supportValue === "dep/id/10" || supportValue === "id/10" ? this.supportNumber : ""
         campos.push(invalidDocuments[((this.fields as FinalTextDocuments)[i as keyof FinalTextDocuments] as keyof InvalidDocuments)])
       }
     }

@@ -11,6 +11,7 @@ import CheckboxContextProvider from "./contexts/CheckboxContext"
 import TextFieldContextProvider from "./contexts/TextfieldContext"
 import ComponentThree from "./components/ActiveRegister"
 import TextGen from "./pages/TextGen"
+import Help from "./pages/Help"
 
 function App() {
   const [isLoading, setIsLoading] = useState<boolean>(true)
@@ -28,7 +29,7 @@ function App() {
               <Loading isLoading={isLoading}>
                 <section className="h-full px-6">
                   <Routes>
-                    <Route path="/" element={<ComponentThree />}></Route>
+                    <Route path="/" element={<ComponentThree setLoading={setIsLoading}/>}></Route>
                     <Route path="/register" element={<TextGen />}></Route>
                     <Route
                       path="/checkboxes"
@@ -39,6 +40,7 @@ function App() {
                       element={<h2>Work in progress...</h2>}
                     ></Route>
                     <Route path="/about" element={<About />}></Route>
+                    <Route path="/help" element={<Help />}></Route>
                   </Routes>
                 </section>
               </Loading>

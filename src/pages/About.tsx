@@ -1,5 +1,6 @@
 import { Typography, Layout, Popover, List } from "antd"
 import GitHubIcon from "@mui/icons-material/GitHub"
+import { Link as RouterLink } from "react-router-dom"
 
 const { Content } = Layout
 const { Text, Title, Link } = Typography
@@ -23,7 +24,12 @@ const About = () => {
         <Text>
           Feel free to download and modify the code.
         </Text>
-        <Title level={3} style={{ fontWeight: "bold", fontSize: "0.9rem",  margin: "0.5rem 0 0 0" }}>
+        <RouterLink to={"/help"}>
+          <Text className="text-[#26a69a]">
+            <br/>Acesse as dicas e o tutorial aqui
+          </Text>
+        </RouterLink>
+        <Title level={3} style={{ fontWeight: "bold", fontSize: "0.9rem", margin: "0.5rem 0 0 0" }}>
           Programas/Tecnologias utilizadas
         </Title>
         <List size="small">
@@ -43,7 +49,7 @@ const About = () => {
       </Content>
       <Content className="w-fit">
         <Link
-          href="https://github.com/secretindex/Python-Scripts"
+          href="https://github.com/secretindex/aucad"
           target="_blank"
           className="flex flex-row justify-start items-center gap-2"
           style={{ width: "fit-content" }}
