@@ -77,6 +77,7 @@ export interface ComplexDocs {
     name: "Foto + ID"
     required: boolean
     present: boolean
+    optionList?: NestedOption[]
   }
   id: {
     name: "Identidade"
@@ -103,26 +104,31 @@ export interface ComplexDocs {
     name: string
     required: boolean
     present: boolean
+    optionList?: NestedOption[]
   }
   contracheque: {
     name: "Contracheque"
     required: boolean
     present: boolean
+    optionList?: NestedOption[]
   }
   posse: {
     name: "Termo de Posse"
     required: boolean
     present: boolean
+    optionList?: NestedOption[]
   }
   veracidade: {
     name: "Termo de Veracidade"
     required: boolean
     present: boolean
+    optionList?: NestedOption[]
   }
   comprovanteEstado: {
     name: "C. Estado Civil"
     required: boolean
     present: boolean
+    optionList?: NestedOption[]
   }
   depId: {
     name: string

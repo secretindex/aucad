@@ -27,7 +27,7 @@ const CheckboxLabelsAnt: React.FC<LabelsProps> = ({ docs, setDocs }) => {
 
     setDocs({
       ...docs,
-      [name]: docs[name] === true ? false : true,
+      [name]: docs[name as keyof RequiredDocs] === true ? false : true,
     })
   }
 

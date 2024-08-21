@@ -3,7 +3,9 @@ import { DocsText, RequiredDocs } from "./docsInterface"
 import FinalTextDocuments from "./endTextObject"
 
 import {
-  invalidDocumens,
+  InvalidDocuments,
+  invalidDocuments,
+  StandardDocuments,
   standardDocuments,
 } from "./documents and models/pendingDocuments"
 
@@ -43,7 +45,7 @@ class EndText {
 
   addTextFields(): Array<string> | [] {
     for (const i in this.fields) {
-      if (this.fields[i] === true) {
+      if ((this.fields as RequiredDocs)[i as keyof RequiredDocs] === true) {
         this.textFields.push(i)
       }
     }
@@ -55,7 +57,7 @@ class EndText {
     this.addTextFields()
     // type any "error"
     for (let i = 0; i < this.textFields.length; i++) {
-      this.midText += `- ${pendingTexts[this.textFields[i]]};\n`
+      this.midText += `- ${pendingTexts[(this.textFields[i] as keyof DocsText)]};\n`
     }
 
     if (!this.midText) {
@@ -71,11 +73,11 @@ class EndText {
     const campos = []
     let support: string = ""
     for (const i in this.fields) {
-      if (typeof this.fields[i] !== "string") {
-        campos.push(this.fields[i] === true ? "" : standardDocuments[i])
+      if (typeof (this.fields as RequiredDocs)[i as keyof RequiredDocs] !== "string") {
+        campos.push((this.fields as RequiredDocs)[i as keyof RequiredDocs] === true ? "" : standardDocuments[i as keyof StandardDocuments])
       } else {
-        support = this.fields[i] === "dep/id/10" ? this.supportNumber : ""
-        campos.push(invalidDocumens[this.fields[i]])
+        support = (this.fields as FinalTextDocuments)[i as keyof FinalTextDocuments] === "dep/id/10" ? this.supportNumber : ""
+        campos.push(invalidDocuments[((this.fields as FinalTextDocuments)[i as keyof FinalTextDocuments] as keyof InvalidDocuments)])
       }
     }
 

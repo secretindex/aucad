@@ -23,6 +23,7 @@ import { useState, useContext, FC } from "react"
 import { Typography, Select, Form, Row, Col, Space, Layout } from "antd"
 import NestedSelect from "./SubComponents/NestedSelect"
 import TextModal from "./TextModal"
+import { ComplexDocs } from "../utils/docsInterface"
 
 const { Option } = Select
 const { Content } = Layout
@@ -116,14 +117,11 @@ const DocumentOptions: React.FC<DocumentosOptionsProps> = ({
 const ComponentThree = () => {
   const docs = useContext(SecondCheckboxContext)
   const textField = useContext(TextFieldContext)
-  const handleClick = (_e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log("-")
-  }
 
   const restartAction = () => {
     textField?.setText("")
 
-    docs?.setDocs((prev) => {
+    docs?.setDocs(() => {
       return documentsContext
     })
 
@@ -144,9 +142,11 @@ const ComponentThree = () => {
               {Object.keys(activesDocument).map((doc: string) => (
                 <DocumentOptions
                   key={doc}
-                  name={activesDocument[doc].name}
+                  name={activesDocument[doc as keyof ComplexDocs].name}
                   keyName={doc}
-                  optionList={activesDocument[doc].optionList}
+                  optionList={
+                    activesDocument[doc as keyof ComplexDocs].optionList
+                  }
                 />
               ))}
             </Row>

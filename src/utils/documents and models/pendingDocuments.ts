@@ -1,4 +1,24 @@
-const invalidDocumens = {
+export type InvalidDocuments = {
+  "cr/60": string
+  "cr/n": string
+  "dr/n": string
+  "id/10": string
+  "id/n": string
+  "cns/n": string
+  "cerc/n": string
+  "cav/n": string
+  "un/n": string
+  "dsvu/n": string
+  "deco/n": string 
+  "dp/n": string
+  "tgc/n": string
+  "dp/21": string
+  "dep/id/n": string
+  "dep/id/10": string
+  "cnd/n": string,
+}
+
+const invalidDocuments: InvalidDocuments = {
   "cr/60": `Comprovante de residência emitido nos últimos 60 dias;\nObs: Comprovante enviado foi emitido em MES. Favor, enviar um comprovante recente`,
   "cr/n": "Comprovante de residência emitido nos últimos 60 dias + Declaração de Residência (anexo II no link abaixo) caso o comprovante esteja no nome de terceiros",
   "dr/n": `Declaração de Residência (anexo II no link abaixo)\nObs: Comprovante enviado está em nome de terceiros. Favor, assinar e enviar a declaração acima`,
@@ -18,7 +38,17 @@ const invalidDocumens = {
   "cnd/n": "Enviar certidão de nascimento do dependente DEP",
 }
 
-const standardDocuments = {
+export type StandardDocuments = {
+  foto: string
+  pis: string
+  posse: string
+  contracheque: string
+  veracidade: string
+  comprovanteEstado: string
+  uniao: string
+}
+
+const standardDocuments: StandardDocuments = {
   foto: "Foto do rosto de frente segurando documento de identidade ao lado",
   pis: "PIS/PASEP ou NIT",
   posse: "Termo de Posse",
@@ -29,4 +59,4 @@ const standardDocuments = {
     "Certidão de União Estável + Comprovante de estado civil anterior a união (caso fora solteiro, enviar certidão de nascimento. Caso fora casado/divorciado, enviar certidão de casamento com averbação",
 }
 
-export { invalidDocumens, standardDocuments }
+export { invalidDocuments, standardDocuments }

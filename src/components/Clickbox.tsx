@@ -29,7 +29,7 @@ export default function CheckboxLabels() {
 
     setDocs({
       ...docs,
-      [name]: docs[name] === true ? false : true,
+      [name]: docs[name as keyof RequiredDocs] === true ? false : true,
     })
   }
 
