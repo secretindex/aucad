@@ -1,6 +1,6 @@
 import { Typography, Layout, List } from "antd"
 const { Content } = Layout
-const { Text, Title, Paragraph } = Typography
+const { Text, Title } = Typography
 
 const Help = () => {
   return (
