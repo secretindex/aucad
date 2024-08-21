@@ -52,7 +52,7 @@ const Help = () => {
             - Se você mudar de aba no aplicativo, as caixinhas selecionadas (da página principal) serão resetadas.
           </List.Item>
           <List.Item>
-            - Ao de reset da página principal recarrega o aplicativo.
+            - O botão de reset da página principal recarrega o aplicativo.
           </List.Item>
         </List>
       </Content>

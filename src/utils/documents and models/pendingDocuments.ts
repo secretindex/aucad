@@ -29,7 +29,7 @@ const invalidDocuments: InvalidDocuments = {
   "cav/n": "Certidão de casamento averbada",
   "un/n": "Declaração de união estável + Certidão de Nascimento",
   "dsvu/n": "Deciaração de união estável + Certidão de Casamento averbada",
-  "deco/n": "Enviar declaração de dependência econômica do dependente DEP",
+  "deco/n": "Enviar declaração de dependência econômica (Anexo V no link abaixo) do dependente DEP",
   "dp/n": "Enviar documento de identidade do dependente DEP",
   "tgc/n": "Enviar termo de guarda do dependente DEP",
   "dp/21": "Em caso de dependente filho(a) com mais de 21 anos, é necessário que se envie laudo/atestado médico caso declarado inválido. Caso não, remover como dependente previdenciário",
