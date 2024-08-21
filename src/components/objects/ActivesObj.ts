@@ -177,7 +177,7 @@ const activesDocument: ComplexDocs = {
   pis: {
     name: "PIS/PASEP ou NIT",
     required: true,
-    present: false
+    present: false,
   },
   contracheque: {
     name: "Contracheque",
@@ -238,20 +238,6 @@ const activesDocument: ComplexDocs = {
                     ],
                   },
                   {
-                    label: "Padrão",
-                    value: "dp/u",
-                    children: [
-                      {
-                        label: "sim",
-                        value: "dp/s",
-                      },
-                      {
-                        label: "não",
-                        value: "dp/n",
-                      },
-                    ],
-                  },
-                  {
                     label: "Curatela/Guarda",
                     value: "cg/u",
                     children: [
@@ -274,6 +260,10 @@ const activesDocument: ComplexDocs = {
                   {
                     label: "Filho + 21",
                     value: "dp/21",
+                  },
+                  {
+                    label: "Ok",
+                    value: "dp/s",
                   },
                 ],
               },
