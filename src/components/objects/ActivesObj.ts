@@ -195,7 +195,7 @@ const activesDocument: ComplexDocs = {
     present: false,
   },
   comprovanteEstado: {
-    name: "C. Estado Civil",
+    name: "D. Estado Civil",
     required: true,
     present: false,
   },

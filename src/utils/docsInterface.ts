@@ -74,27 +74,27 @@ interface NestedOption extends Option {
 
 export interface ComplexDocs {
   foto: {
-    name: "Foto + ID"
+    name: string
     required: boolean
     present: boolean
     optionList?: NestedOption[]
   }
   id: {
-    name: "Identidade"
+    name: string
     required: boolean
     present: boolean
     options: "valido" | "+10" | undefined
     optionList: NestedOption[]
   }
   residencia: {
-    name: "C. Residencia"
+    name: string
     required: boolean
     present: boolean
     options: "valido" | "+60" | "terceiros" | undefined
     optionList: NestedOption[]
   }
   estadoCivil: {
-    name: "Estado civil"
+    name: string
     required: boolean
     present: boolean
     options: "solteiro" | "casado" | "uniao" | undefined
@@ -107,25 +107,25 @@ export interface ComplexDocs {
     optionList?: NestedOption[]
   }
   contracheque: {
-    name: "Contracheque"
+    name: string
     required: boolean
     present: boolean
     optionList?: NestedOption[]
   }
   posse: {
-    name: "Termo de Posse"
+    name: string
     required: boolean
     present: boolean
     optionList?: NestedOption[]
   }
   veracidade: {
-    name: "Termo de Veracidade"
+    name: string
     required: boolean
     present: boolean
     optionList?: NestedOption[]
   }
   comprovanteEstado: {
-    name: "C. Estado Civil"
+    name: string
     required: boolean
     present: boolean
     optionList?: NestedOption[]
