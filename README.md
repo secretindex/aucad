@@ -19,3 +19,10 @@ A mensagem é editável.
 - Alguns textos são modelos, como por exemplo, o texto para pedir o documento de identidade de algum dependente. Certifique-se de que você digitou o nome da pessoa no lugar do texto em maiúsculo.
 - Se você mudar de aba no aplicativo, as caixinhas selecionadas (da página principal) serão resetadas.
 - Apenas o botão de reset da página principal recarrega o aplicativo.
+
+### Proximas mensagens / features para implementar
+
+- ID de dependente incompleto
+- Estado Civil não declarado e nenhuma certidão
+- Numero de suporte para id pessoal +10 (fix)
+- Página para me enviar mensagem sobre alguma feature nova, ideia ou relatar bug
