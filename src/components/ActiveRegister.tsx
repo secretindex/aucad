@@ -39,7 +39,6 @@ interface DocumentosOptionsProps {
 // }
 
 const SelectComponent: FC<DocumentosOptionsProps> = ({
-  name,
   keyName,
   optionList,
 }) => {
