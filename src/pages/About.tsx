@@ -31,6 +31,9 @@ const About = () => {
           </Link>
         </Popover>
       </Title>
+      <Content>
+        <Text>Envie uma mensagem pra mim pra me dar uma sugestão 👉 <RouterLink to="/contact" style={{ color: "#26a69a" }}>Contato</RouterLink></Text>
+      </Content>
       <Content className="my-3">
         <Title
           level={3}
