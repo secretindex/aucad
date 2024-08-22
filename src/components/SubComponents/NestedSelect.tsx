@@ -5,6 +5,7 @@ import { SecondCheckboxContentType } from "../../contexts/SecondCheckboxContext"
 
 // Pass the last value to end object in the component above
 
+// Int = interface
 export interface OptionInt {
   label: string
   value: string | number | undefined
