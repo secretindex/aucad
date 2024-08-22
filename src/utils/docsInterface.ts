@@ -72,6 +72,45 @@ interface NestedOption extends Option {
   children?: NestedOption[]
 }
 
+export interface PensionerDocs {
+  foto: {
+    name: string
+    present: boolean
+    optionList?: NestedOption[]
+  }
+  id: {
+    name: string
+    required: boolean
+    present: boolean
+    optionList?: NestedOption[]
+  }
+  residencia: {
+    name: string
+    required: boolean
+    present: boolean
+    options: "valido" | "+60" | "terceiros" | undefined
+    optionList: NestedOption[]
+  }
+  pis: {
+    name: string
+    required: boolean
+    present: boolean
+    optionList: NestedOption[]
+  }
+  estadoCivil: {
+    name: string
+    required: boolean
+    present: boolean
+    optionList: NestedOption[]
+  }
+  decInPen: {
+    name: string
+    required: boolean
+    present: boolean
+    optionList?: NestedOption[]
+  }
+}
+
 export interface ComplexDocs {
   foto: {
     name: string
