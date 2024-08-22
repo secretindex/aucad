@@ -12,6 +12,7 @@ const popContent = (
 )
 
 const About = () => {
+
   return (
     <section className="py-5 flex flex-col">
       <Title level={2} style={{ fontSize: "1.5rem", margin: "0" }}>
@@ -32,7 +33,7 @@ const About = () => {
         </Popover>
       </Title>
       <Content>
-        <Text>Envie uma mensagem pra mim pra me dar uma sugestão 👉 <RouterLink to="/contact" style={{ color: "#26a69a" }}>Contato</RouterLink></Text>
+        <Text>Envie uma mensagem pra mim pra me dar uma sugestão 👉 <RouterLink to={"./contact"} style={{ color: "#26a69a" }}>Contato</RouterLink></Text>
       </Content>
       <Content className="my-3">
         <Title
@@ -52,7 +53,7 @@ const About = () => {
           <List.Item>Library: React</List.Item>
         </List>
       </Content>
-      <RouterLink to={"/help"}>
+      <RouterLink to={"/about/help"}>
         <Text className="text-[#26a69a]">
           Acesse as dicas e o tutorial aqui
         </Text>
