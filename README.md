@@ -26,3 +26,18 @@ A mensagem é editável.
 - Estado Civil não declarado e nenhuma certidão
 - Numero de suporte para id pessoal +10 (fix)
 - Página para me enviar mensagem sobre alguma feature nova, ideia ou relatar bug
+
+
+#### Pensionistas - Documents
+
+- Identitade
+- Comprovante de Residência
+- Após falecimento -> Casamento OU União Estável
+est. civil não obrigatório
+- PIS
+- Declaração de IRPF ou ISENÇÃO
+
+**Filhos**
+
+- PIS para + 18;
+- Inacumulabilidade de Pensão
