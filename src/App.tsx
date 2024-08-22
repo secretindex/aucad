@@ -13,6 +13,7 @@ import ComponentThree from "./components/ActiveRegister"
 import TextGen from "./pages/TextGen"
 import Help from "./pages/Help"
 import Contact from "./pages/Contact"
+import PensionerRegister from "./components/PensionerRegister"
 
 function App() {
   const [isLoading, setIsLoading] = useState<boolean>(true)
@@ -38,11 +39,11 @@ function App() {
                     <Route path="/checkboxes" element={<TextGen />}></Route>
                     <Route
                       path="/pensionistas"
-                      element={<h2>Work in progress...</h2>}
+                      element={<PensionerRegister setLoading={setIsLoading} />}
                     ></Route>
-                    <Route path="/about" element={<About />}></Route>
-                    <Route path="/help" element={<Help />}></Route>
-                    <Route path="/contact" element={<Contact />}></Route>
+                    <Route path="/about" loader element={<About />}></Route>
+                    <Route path="/about/help" element={<Help />}></Route>
+                    <Route path="/about/contact" element={<Contact />}></Route>
                   </Routes>
                 </section>
               </Loading>
