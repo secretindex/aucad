@@ -1,5 +1,3 @@
-import "./App.css"
-// import Home from "./pages/TextGen"
 import MenuAnt from "./components/Menu"
 import About from "./pages/About"
 import { SecondCheckboxContextProvider } from "./contexts/SecondCheckboxContext"
@@ -14,6 +12,9 @@ import TextGen from "./pages/TextGen"
 import Help from "./pages/Help"
 import Contact from "./pages/Contact"
 import PensionerRegister from "./components/PensionerRegister"
+import { PensionerContextProvider } from "./contexts/PensionerContext"
+
+import "./App.css"
 
 function App() {
   const [isLoading, setIsLoading] = useState<boolean>(true)
@@ -25,30 +26,37 @@ function App() {
     <main className="min-h-5/6">
       <Router>
         <CheckboxContextProvider>
-          <SecondCheckboxContextProvider>
-            <TextFieldContextProvider>
-              <MenuAnt />
-              <Loading isLoading={isLoading}>
-                <section className="h-full px-6">
-                  <Routes>
-                    <Route
-                      path="/"
-                      element={<ComponentThree setLoading={setIsLoading} />}
-                    ></Route>
-                    <Route path="/register" element={<TextGen />}></Route>
-                    <Route path="/checkboxes" element={<TextGen />}></Route>
-                    <Route
-                      path="/pensionistas"
-                      element={<PensionerRegister setLoading={setIsLoading} />}
-                    ></Route>
-                    <Route path="/about" loader element={<About />}></Route>
-                    <Route path="/about/help" element={<Help />}></Route>
-                    <Route path="/about/contact" element={<Contact />}></Route>
-                  </Routes>
-                </section>
-              </Loading>
-            </TextFieldContextProvider>
-          </SecondCheckboxContextProvider>
+          <PensionerContextProvider>
+            <SecondCheckboxContextProvider>
+              <TextFieldContextProvider>
+                <MenuAnt />
+                <Loading isLoading={isLoading}>
+                  <section className="h-full px-6">
+                    <Routes>
+                      <Route
+                        path="/"
+                        element={<ComponentThree setLoading={setIsLoading} />}
+                      ></Route>
+                      <Route path="/register" element={<TextGen />}></Route>
+                      <Route path="/checkboxes" element={<TextGen />}></Route>
+                      <Route
+                        path="/pensionistas"
+                        element={
+                          <PensionerRegister setLoading={setIsLoading} />
+                        }
+                      ></Route>
+                      <Route path="/about" loader element={<About />}></Route>
+                      <Route path="/about/help" element={<Help />}></Route>
+                      <Route
+                        path="/about/contact"
+                        element={<Contact />}
+                      ></Route>
+                    </Routes>
+                  </section>
+                </Loading>
+              </TextFieldContextProvider>
+            </SecondCheckboxContextProvider>
+          </PensionerContextProvider>
         </CheckboxContextProvider>
       </Router>
     </main>
