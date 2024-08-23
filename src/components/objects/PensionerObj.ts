@@ -1,4 +1,3 @@
-import { Children } from "react"
 import { PensionerDocs } from "../../utils/docsInterface"
 
 const pensionerObj: PensionerDocs = {
