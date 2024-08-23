@@ -6,6 +6,7 @@ const DocumentOptions: React.FC<DocumentosOptionsProps> = ({
   name,
   keyName,
   optionList,
+  category
 }) => {
   return (
     <Col span={8}>
@@ -13,6 +14,7 @@ const DocumentOptions: React.FC<DocumentosOptionsProps> = ({
         <label className=" text-gray-500">{name}</label>
         <SelectComponent
           optionList={optionList}
+          category={category}
           name={name}
           keyName={keyName}
         />

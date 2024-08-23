@@ -17,11 +17,13 @@ import { ComplexDocs } from "../utils/docsInterface"
 const { Content } = Layout
 
 type OptList = Array<string | OptionInt | undefined>
+export type Category = "active" | "inactive" | "pensioner"
 
 export interface DocumentosOptionsProps {
   name: string
   keyName: string
   optionList?: OptList
+  category: Category
 }
 
 interface ComponentThreeProps {
@@ -62,6 +64,7 @@ const ComponentThree: React.FC<ComponentThreeProps> = ({ setLoading }) => {
               {Object.keys(activesDocument).map((doc: string) => (
                 <DocumentOptions
                   key={doc}
+                  category="active"
                   name={activesDocument[doc as keyof ComplexDocs].name}
                   keyName={doc}
                   optionList={
@@ -71,7 +74,7 @@ const ComponentThree: React.FC<ComponentThreeProps> = ({ setLoading }) => {
               ))}
             </Row>
             <Content className="w-full flex justify-center">
-              <TextModal />
+              <TextModal category="active"/>
             </Content>
           </Space>
         </Col>

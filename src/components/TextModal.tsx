@@ -5,22 +5,37 @@ import { TextFieldContext } from "../contexts/TextfieldContext"
 import { CopyOutlined } from "@ant-design/icons"
 import EndText from "../utils/endTextGen"
 import { SecondCheckboxContext } from "../contexts/SecondCheckboxContext"
+import { PensionerContext } from "../contexts/PensionerContext"
+import { Category } from "./ActiveRegister"
 
 const { TextArea } = Input
 
-const TextModal: React.FC = () => {
+interface TextModalProps {
+  category: Category
+}
+
+const TextModal: React.FC<TextModalProps> = ({ category }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const textField = useContext(TextFieldContext)
   const globalDocs = useContext(SecondCheckboxContext)
+  const penDocs = useContext(PensionerContext)
   const text = textField!.text
 
   const [_messageApi, contextHolder] = message.useMessage()
 
   const generateText = () => {
-    const finalText = new EndText(globalDocs!.docs)
-    const rejectText = finalText.returnFinalText()
+    if (category === "active") {
+      const finalText = new EndText(globalDocs!.docs)
+      const rejectText = finalText.returnActivesRejectText()
 
-    textField?.setText(rejectText)
+      textField?.setText(rejectText)
+    }
+    if (category === "pensioner") {
+      const pensionerText = new EndText(penDocs!.docs)
+      const penRejectText = pensionerText.returnPensionerText()
+
+      textField?.setText(penRejectText)
+    }
   }
 
   const showModal = () => {
@@ -38,13 +53,16 @@ const TextModal: React.FC = () => {
   }
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(text).then(() => {
-      // info()
-      message.success('Text copied to clipboard!');
-    }).catch(() => {
-      message.error('Failed to copy text.');
-    });
-  };
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        // info()
+        message.success("Text copied to clipboard!")
+      })
+      .catch(() => {
+        message.error("Failed to copy text.")
+      })
+  }
 
   return (
     <>
@@ -64,9 +82,7 @@ const TextModal: React.FC = () => {
           value={text.trim()}
           onChange={handleTextFieldChange}
           style={{ height: "400px", resize: "none" }}
-        >
-
-        </TextArea>
+        ></TextArea>
         <Button
           icon={<CopyOutlined />}
           onClick={handleCopy}

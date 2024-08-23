@@ -1,8 +1,3 @@
-import activesDocument from "./objects/ActivesObj"
-import {
-  documentsContext,
-  SecondCheckboxContext,
-} from "../contexts/SecondCheckboxContext"
 import { OptionInt } from "./SubComponents/NestedSelect"
 import { ReloadOutlined } from "@ant-design/icons"
 import { TextFieldContext } from "../contexts/TextfieldContext"
@@ -12,11 +7,15 @@ import DocumentOptions from "./SubComponents/DocumentOptions"
 import React, { useContext, useEffect, Dispatch, SetStateAction } from "react"
 import { FloatButton, Typography, Row, Col, Space, Layout } from "antd"
 import TextModal from "./TextModal"
-import { ComplexDocs } from "../utils/docsInterface"
+import { PensionerDocs } from "../utils/docsInterface"
+// import activesDocument from "./objects/ActivesObj"
+import pensionerObj from "./objects/PensionerObj"
+import { PensionerContext, pensionerContextDocs } from "../contexts/PensionerContext"
 
 const { Content } = Layout
 
 type OptList = Array<string | OptionInt | undefined>
+
 
 export interface DocumentosOptionsProps {
   name: string
@@ -29,7 +28,7 @@ interface PensionerProps {
 }
 
 const PensionerRegister: React.FC<PensionerProps> = ({ setLoading }) => {
-  const docs = useContext(SecondCheckboxContext)
+  const docs = useContext(PensionerContext)
   const textField = useContext(TextFieldContext)
 
   useEffect(() => {
@@ -42,7 +41,7 @@ const PensionerRegister: React.FC<PensionerProps> = ({ setLoading }) => {
     textField?.setText("")
 
     docs?.setDocs(() => {
-      return documentsContext
+      return pensionerContextDocs
     })
 
     window.location.reload()
@@ -59,19 +58,20 @@ const PensionerRegister: React.FC<PensionerProps> = ({ setLoading }) => {
               </Typography.Title>
             </Content>
             <Row gutter={[16, 8]}>
-              {Object.keys(activesDocument).map((doc: string) => (
+              {Object.keys(pensionerObj).map((doc: string) => (
                 <DocumentOptions
                   key={doc}
-                  name={activesDocument[doc as keyof ComplexDocs].name}
+                  name={pensionerObj[doc as keyof PensionerDocs].name}
                   keyName={doc}
+                  category="pensioner"
                   optionList={
-                    activesDocument[doc as keyof ComplexDocs].optionList
+                    pensionerObj[doc as keyof PensionerDocs].optionList
                   }
                 />
               ))}
             </Row>
             <Content className="w-full flex justify-center">
-              <TextModal />
+              <TextModal category="pensioner"/>
             </Content>
           </Space>
         </Col>

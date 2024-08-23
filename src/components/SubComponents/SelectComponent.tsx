@@ -2,6 +2,7 @@ import { FC, useContext, useState } from "react"
 import { Select } from "antd"
 import NestedSelect from "./NestedSelect"
 import { SecondCheckboxContext } from "../../contexts/SecondCheckboxContext"
+import { PensionerContext } from "../../contexts/PensionerContext"
 import { DocumentosOptionsProps } from "../ActiveRegister"
 
 const { Option } = Select
@@ -9,21 +10,30 @@ const { Option } = Select
 const SelectComponent: FC<DocumentosOptionsProps> = ({
   keyName,
   optionList,
+  category,
 }) => {
   const globalDocs = useContext(SecondCheckboxContext)
+  const pensionerDocs = useContext(PensionerContext)
   const [field, setField] = useState<string>("")
 
   const handleChange = (value: string) => {
     setField(value)
 
-    console.log(optionList ? optionList : "marmota")
+    console.log(keyName + " " + value)
 
-    // console.log(field + " " + value)
-
-    globalDocs?.setDocs({
-      ...globalDocs.docs,
-      [keyName]: value == "sim" ? true : false,
-    })
+    if (category === "active") {
+      globalDocs?.setDocs({
+        ...globalDocs.docs,
+        [keyName]: value == "sim" ? true : false,
+      })
+      console.log(globalDocs?.docs)
+    }
+    if (category === "pensioner") {
+      pensionerDocs?.setDocs({
+        ...pensionerDocs.docs,
+        [keyName]: value == 'sim' ? true : false
+      })
+    }
   }
 
   // Default
@@ -56,7 +66,7 @@ const SelectComponent: FC<DocumentosOptionsProps> = ({
       <NestedSelect
         optionList={optionList}
         keyName={keyName}
-        globalDocs={globalDocs}
+        category={category}
       />
     )
   }

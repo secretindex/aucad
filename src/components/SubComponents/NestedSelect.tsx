@@ -1,9 +1,8 @@
-import React from "react"
+import { useContext } from "react"
 import type { CascaderProps } from "antd"
 import { Cascader } from "antd"
-import { SecondCheckboxContentType } from "../../contexts/SecondCheckboxContext"
-
-// Pass the last value to end object in the component above
+import { SecondCheckboxContext } from "../../contexts/SecondCheckboxContext"
+import { PensionerContext } from "../../contexts/PensionerContext"
 
 // Int = interface
 export interface OptionInt {
@@ -15,22 +14,33 @@ export interface OptionInt {
 interface NestedSelectProps {
   optionList: OptionInt[]
   keyName: string
-  globalDocs: SecondCheckboxContentType | undefined
+  category: "active" | "inactive" | "pensioner"
 }
 
 const NestedSelect: React.FC<NestedSelectProps> = ({
   optionList,
   keyName,
-  globalDocs,
+  category,
 }) => {
   const options: OptionInt[] = optionList
+  const globalDocs = useContext(SecondCheckboxContext)
+  const pensionerDocs = useContext(PensionerContext)
 
   const onChange: CascaderProps<OptionInt>["onChange"] = (value) => {
-    const lastVal = value[value.length - 1];
-    globalDocs?.setDocs({
-      ...globalDocs.docs,
-      [keyName]: lastVal,
-    })
+    const lastVal = value[value.length - 1]
+    if (category === "active") {
+      globalDocs?.setDocs({
+        ...globalDocs.docs,
+        [keyName]: lastVal,
+      })
+    }
+
+    if (category === "pensioner") {
+      pensionerDocs?.setDocs({
+        ...pensionerDocs.docs,
+        [keyName]: lastVal,
+      })
+    }
     console.log(keyName + " " + lastVal)
   }
 
