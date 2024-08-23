@@ -10,12 +10,11 @@ export type InvalidPensioner = {
   "cav/n": string
   "un/n": string
   "dsvu/n": string
-  "dirpf/n": string
-  "disirpf/n": string
   "dirpf/ca": string
+  "dirpf/n": string
 }
 
-const pensionerDocuments: InvalidPensioner = {
+const invalidPensioner: InvalidPensioner = {
   "cr/60": `Comprovante de residência emitido nos últimos 60 dias;\nObs: Comprovante enviado foi emitido em MES. Favor, enviar um comprovante recente`,
   "cr/n": "Comprovante de residência emitido nos últimos 60 dias + Declaração de Residência (anexo II no link abaixo) caso o comprovante esteja no nome de terceiros",
   "dr/n": `Declaração de Residência (anexo II no link abaixo)\nObs: Comprovante enviado está em nome de terceiros. Favor, assinar e enviar a declaração acima`,
@@ -27,9 +26,13 @@ const pensionerDocuments: InvalidPensioner = {
   "cav/n": "Certidão de casamento averbada",
   "un/n": "Declaração de união estável + Certidão de Nascimento",
   "dsvu/n": "Deciaração de união estável + Certidão de Casamento averbada",
-  "dirpf/n": "Enviar declaração de imposto de renda (Ano/Exercício 2023 ou 2024)",
-  "disirpf/n": "Enviar declaração de isenção de imposto de renda",
-  "dirpf/ca": "Declaração de imposto de renda é de Ano/Exercício anterior à 2023. Favor, enviar declaração de imposto de renda atualizado"
+  "dirpf/n": "Enviar declaração de imposto de renda (Ano/Exercício 2023 ou 2024) ou, caso seja isento, enviar declaração de isenção de imposto de renda",
+  "dirpf/ca": "Declaração de imposto de renda é de Ano/Exercício anterior à 2023. Favor, enviar declaração de IRPF atualizado"
+}
+
+export type PensionerCheck = {
+  foto: boolean
+  inacPen: boolean
 }
 
 export type StandardPensioner = {
@@ -42,4 +45,5 @@ const standardPensioner: StandardPensioner = {
   inacPen: "Enviar declaração de Inacumulabilidade de Pensão (Anexo VIII no link abaixo)"
 }
 
-export {pensionerDocuments, standardPensioner}
+export {invalidPensioner, standardPensioner}
+

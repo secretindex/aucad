@@ -1,3 +1,4 @@
+import { Children } from "react"
 import { PensionerDocs } from "../../utils/docsInterface"
 
 const pensionerObj: PensionerDocs = {
@@ -162,25 +163,60 @@ const pensionerObj: PensionerDocs = {
         children: [
           {
             label: "sim",
-            value: "pis/18/s"
+            value: "pis/18/s",
           },
           {
             label: "não",
-            value: "pis/18/n"
-          }
-        ]
+            value: "pis/18/n",
+          },
+        ],
       },
       {
         label: "nao necessario",
-        value: "pis/nr"
-      }
-    ]
+        value: "pis/nr",
+      },
+    ],
   },
-  decInPen: {
-    name: "D. Inacumulabilidade de Pen.",
+  inacPen: {
+    name: "Inacum. de Pensão",
     required: true,
     present: false,
-  }
+  },
+  decIRPF: {
+    name: "Dec. IRPF",
+    required: true,
+    present: false,
+    optionList: [
+      {
+        label: "sim",
+        value: "irpf/s",
+        children: [
+          {
+            label: "Ano/Exercício atual",
+            value: "dirpf/u",
+            children: [
+              {
+                label: "sim",
+                value: "dirpf/s"
+              },
+              {
+                label: "não",
+                value: "dirpf/ca"
+              }
+            ]
+          },
+          {
+            label: "isento",
+            value: "disirpf/s",
+          }
+        ],
+      },
+      {
+        label: "não",
+        value: "dirpf/n"
+      }
+    ],
+  },
 }
 
 export default pensionerObj

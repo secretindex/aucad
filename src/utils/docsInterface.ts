@@ -103,7 +103,13 @@ export interface PensionerDocs {
     present: boolean
     optionList: NestedOption[]
   }
-  decInPen: {
+  inacPen: {
+    name: string
+    required: boolean
+    present: boolean
+    optionList?: NestedOption[]
+  }
+  decIRPF: {
     name: string
     required: boolean
     present: boolean
