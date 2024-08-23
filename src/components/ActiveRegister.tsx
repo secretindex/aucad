@@ -34,7 +34,6 @@ const ComponentThree: React.FC<ComponentThreeProps> = ({ setLoading }) => {
 
   useEffect(() => {
     return () => {
-      textField?.setText("")
       setLoading(false)
     }
   })
