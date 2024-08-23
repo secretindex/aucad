@@ -1,6 +1,7 @@
 import text from "./text"
 import { DocsText, RequiredDocs } from "./docsInterface"
 import FinalTextDocuments from "./endTextObject"
+import { PensionerDocuments } from "./endTextObject"
 
 import {
   InvalidDocuments,
@@ -8,6 +9,13 @@ import {
   StandardDocuments,
   standardDocuments,
 } from "./documents and models/pendingDocuments"
+
+import {
+  invalidPensioner,
+  InvalidPensioner,
+  standardPensioner,
+  PensionerCheck,
+} from "./documents and models/pensionerDocuments"
 
 const pendingTexts: DocsText = {
   foto: "Foto do rosto de frente segurando documento de identidade ao lado",
@@ -34,9 +42,13 @@ class EndText {
   private bottom: string = text.bottomText
   private textFields: Array<string>
   private supportNumber: string
-  fields: RequiredDocs | FinalTextDocuments
+  fields:
+    | RequiredDocs
+    | FinalTextDocuments
+    | PensionerDocuments
+    | PensionerCheck
 
-  constructor(fields: RequiredDocs | FinalTextDocuments) {
+  constructor(fields: RequiredDocs | FinalTextDocuments | PensionerDocuments) {
     this.fields = fields
     this.textFields = []
     this.supportNumber =
@@ -57,7 +69,9 @@ class EndText {
     this.addTextFields()
     // type any "error"
     for (let i = 0; i < this.textFields.length; i++) {
-      this.midText += `- ${pendingTexts[(this.textFields[i] as keyof DocsText)]};\n`
+      this.midText += `- ${
+        pendingTexts[this.textFields[i] as keyof DocsText]
+      };\n`
     }
 
     if (!this.midText) {
@@ -69,17 +83,81 @@ class EndText {
 
   validateFields() {}
 
-  returnFinalText(): any {
+  returnActivesRejectText(): any {
     const campos = []
     let support: string = ""
+
     for (const i in this.fields) {
-      if (typeof (this.fields as RequiredDocs)[i as keyof RequiredDocs] !== "string") {
-        campos.push((this.fields as RequiredDocs)[i as keyof RequiredDocs] === true ? "" : standardDocuments[i as keyof StandardDocuments])
+      if (
+        typeof (this.fields as RequiredDocs)[i as keyof RequiredDocs] !==
+        "string"
+      ) {
+        campos.push(
+          (this.fields as RequiredDocs)[i as keyof RequiredDocs] === true
+            ? ""
+            : standardDocuments[i as keyof StandardDocuments]
+        )
       } else {
-        let supportValue = (this.fields as FinalTextDocuments)[i as keyof FinalTextDocuments]
+        let supportValue = (this.fields as FinalTextDocuments)[
+          i as keyof FinalTextDocuments
+        ]
         console.log(supportValue)
-        support = supportValue === "dep/id/10" || supportValue === "id/10" ? this.supportNumber : ""
-        campos.push(invalidDocuments[((this.fields as FinalTextDocuments)[i as keyof FinalTextDocuments] as keyof InvalidDocuments)])
+        support =
+          supportValue === "dep/id/10" || supportValue === "id/10"
+            ? this.supportNumber
+            : ""
+        campos.push(
+          invalidDocuments[
+            (this.fields as FinalTextDocuments)[
+              i as keyof FinalTextDocuments
+            ] as keyof InvalidDocuments
+          ]
+        )
+      }
+    }
+
+    for (let i = 0; i < campos.length; i++) {
+      if (typeof campos[i] === "string" && campos[i].length === 0) continue
+      if (typeof campos[i] === "undefined") continue
+
+      if (campos[i]) this.midText += `- ${campos[i]};\n`
+    }
+
+    if (this.midText) {
+      return this.upper + "\n" + this.midText + support + this.bottom
+    } else {
+      return "Cadastro completo 👍"
+    }
+  }
+
+  returnPensionerText() {
+    const campos = []
+    let support: string = ""
+
+    for (const i in this.fields) {
+      if (
+        typeof (this.fields as PensionerDocuments)[
+          i as keyof PensionerDocuments
+        ] !== "string"
+      ) {
+        campos.push(
+          (this.fields as PensionerCheck)[i as keyof PensionerCheck] === true
+            ? ""
+            : standardPensioner[i as keyof PensionerCheck]
+        )
+      } else {
+        let supportValue = (this.fields as PensionerDocuments)[
+          i as keyof PensionerDocuments
+        ]
+        console.log("this is support value for pensioner " + supportValue)
+        support = supportValue === "id/10" ? this.supportNumber : ""
+        campos.push(
+          invalidPensioner[
+            (this.fields as PensionerDocuments)[
+              i as keyof PensionerDocuments
+            ] as keyof InvalidPensioner
+          ]
+        )
       }
     }
 
