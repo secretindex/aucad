@@ -8,6 +8,7 @@ export type InvalidDocuments = {
   "cerc/n": string
   "cav/n": string
   "un/n": string
+  "un/nd": string
   "dsvu/n": string
   "deco/n": string 
   "tgc/n": string
@@ -27,7 +28,8 @@ const invalidDocuments: InvalidDocuments = {
   "cerc/n": "Certidão de Casamento",
   "cav/n": "Certidão de casamento averbada",
   "un/n": "Declaração de união estável + Certidão de Nascimento",
-  "dsvu/n": "Deciaração de união estável + Certidão de Casamento averbada",
+  "un/nd": "Declaração de união estável + Certidão de acordo com estado civil anterior à união estável (caso fora casado/divorciado/separado, enviar certidão de casamento; caso fora solteiro, enviar certidão de nascimento)",
+  "dsvu/n": "Declaração de união estável + Certidão de Casamento averbada",
   "deco/n": "Enviar declaração de dependência econômica (Anexo V no link abaixo) do dependente DEP",
   "tgc/n": "Enviar termo de guarda do dependente DEP",
   "dp/21": "Em caso de dependente filho(a) com mais de 21 anos, é necessário que se envie laudo/atestado médico caso declarado inválido. Caso não, remover como dependente previdenciário",
