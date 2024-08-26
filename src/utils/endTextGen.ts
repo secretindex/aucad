@@ -63,7 +63,7 @@ class EndText {
         let supportValue = (this.fields as FinalTextDocuments)[
           i as keyof FinalTextDocuments
         ]
-        console.log(supportValue)
+        console.log("this is support value " + supportValue)
         support =
           supportValue === "dep/id/10" || supportValue === "id/10"
             ? this.supportNumber
