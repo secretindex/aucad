@@ -1,3 +1,4 @@
+// a.k.a. inativo
 const retiredDocuments = {
   foto: {
     name: "Foto + ID",

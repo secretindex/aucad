@@ -1,5 +1,6 @@
 import { ComplexDocs } from "../../utils/docsInterface"
 
+// I'll try to remove the obj keys "required" and "present" later
 const activesDocument: ComplexDocs = {
   foto: {
     name: "Foto + ID",
