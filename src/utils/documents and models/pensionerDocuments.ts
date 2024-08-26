@@ -25,7 +25,7 @@ const invalidPensioner: InvalidPensioner = {
   "cerc/n": "Certidão de Casamento",
   "cav/n": "Certidão de casamento averbada",
   "un/n": "Declaração de união estável + Certidão de Nascimento",
-  "dsvu/n": "Deciaração de união estável + Certidão de Casamento averbada",
+  "dsvu/n": "Declaração de união estável + Certidão de Casamento averbada",
   "dirpf/n": "Enviar declaração de imposto de renda (Ano/Exercício 2023 ou 2024) ou, caso seja isento, enviar declaração de isenção de imposto de renda",
   "dirpf/ca": "Declaração de imposto de renda é de Ano/Exercício anterior à 2023. Favor, enviar declaração de IRPF atualizado"
 }

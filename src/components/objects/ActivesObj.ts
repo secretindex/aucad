@@ -171,6 +171,10 @@ const activesDocument: ComplexDocs = {
               },
             ],
           },
+          {
+            label: "não declarado",
+            value: "un/nd"
+          }
         ],
       },
     ],
