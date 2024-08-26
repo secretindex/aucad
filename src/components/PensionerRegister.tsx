@@ -31,18 +31,23 @@ const PensionerRegister: React.FC<PensionerProps> = ({ setLoading }) => {
   const docs = useContext(PensionerContext)
   const textField = useContext(TextFieldContext)
 
-  useEffect(() => {
-    return () => {
-      setLoading(false)
-    }
-  })
-
-  const restartAction = () => {
+  const statusReset = () => {
     textField?.setText("")
 
     docs?.setDocs(() => {
       return pensionerContextDocs
     })
+  }
+
+  useEffect(() => {
+    return () => {
+      statusReset()
+      setLoading(false)
+    }
+  }, [])
+
+  const restartAction = () => {
+    statusReset()
 
     window.location.reload()
   }
@@ -71,7 +76,7 @@ const PensionerRegister: React.FC<PensionerProps> = ({ setLoading }) => {
               ))}
             </Row>
             <Content className="w-full flex justify-center">
-              <TextModal category="pensioner"/>
+              <TextModal category="pensioner" />
             </Content>
           </Space>
         </Col>

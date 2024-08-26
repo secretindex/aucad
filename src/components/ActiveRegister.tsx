@@ -34,19 +34,23 @@ const ComponentThree: React.FC<ComponentThreeProps> = ({ setLoading }) => {
   const docs = useContext(SecondCheckboxContext)
   const textField = useContext(TextFieldContext)
 
-  useEffect(() => {
-    return () => {
-      setLoading(false)
-    }
-  })
-
-  const restartAction = () => {
+  const statusReset = () => {
     textField?.setText("")
 
     docs?.setDocs(() => {
       return documentsContext
     })
+  }
 
+  useEffect(() => {
+    return () => {
+      statusReset()
+      setLoading(false)
+    }
+  }, [])
+
+  const restartAction = () => {
+    statusReset()
     window.location.reload()
   }
 
@@ -74,7 +78,7 @@ const ComponentThree: React.FC<ComponentThreeProps> = ({ setLoading }) => {
               ))}
             </Row>
             <Content className="w-full flex justify-center">
-              <TextModal category="active"/>
+              <TextModal category="active" />
             </Content>
           </Space>
         </Col>
