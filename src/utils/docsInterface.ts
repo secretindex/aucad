@@ -1,4 +1,4 @@
-// For checkboxes
+// Not for checkboxes anymore
 export interface RequiredDocs {
   foto: boolean
   id: boolean
@@ -184,18 +184,18 @@ export interface ComplexDocs {
   }
 }
 
-export interface DocsText {
-  foto: string
-  id: string
-  pis: string
-  residencia: string
-  uniao: string
-  casamento: string
-  nascimento: string
-  contracheque: string
-  posse: string
-  veracidade: string
-  estadoc: string
-  depid: string
-  decres: string
-}
+// export interface DocsText {
+//   foto: string
+//   id: string
+//   pis: string
+//   residencia: string
+//   uniao: string
+//   casamento: string
+//   nascimento: string
+//   contracheque: string
+//   posse: string
+//   veracidade: string
+//   estadoc: string
+//   depid: string
+//   decres: string
+// }
