@@ -8,7 +8,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import CheckboxContextProvider from "./contexts/CheckboxContext"
 import TextFieldContextProvider from "./contexts/TextfieldContext"
 import ComponentThree from "./components/ActiveRegister"
-import TextGen from "./pages/TextGen"
 import Help from "./pages/Help"
 import Contact from "./pages/Contact"
 import PensionerRegister from "./components/PensionerRegister"
@@ -17,6 +16,7 @@ import { PensionerContextProvider } from "./contexts/PensionerContext"
 import "./App.css"
 
 function App() {
+  // Remove later
   const [isLoading, setIsLoading] = useState<boolean>(true)
   useEffect(() => {
     setIsLoading(false)
@@ -37,8 +37,6 @@ function App() {
                         path="/"
                         element={<ComponentThree setLoading={setIsLoading} />}
                       ></Route>
-                      <Route path="/register" element={<TextGen />}></Route>
-                      <Route path="/checkboxes" element={<TextGen />}></Route>
                       <Route
                         path="/pensionistas"
                         element={
