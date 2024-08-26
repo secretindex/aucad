@@ -5,6 +5,7 @@ export type InvalidDocuments = {
   "id/10": string
   "id/n": string
   "cns/n": string
+  "estc/nd": string
   "cerc/n": string
   "cav/n": string
   "un/n": string
@@ -25,6 +26,10 @@ const invalidDocuments: InvalidDocuments = {
   "id/10": `Documento de identidade;\nObs: Documento de identidade enviado foi emitido em ANO, ultrapassando o limite de 10 anos desde a data de emissão. Caso não haja outro documento para substituir (CNH, Conselho de Classe ou Passaporte), entre em contato com nosso suporte informando seu caso`,
   "id/n": "Documento de Identidade emitido nos últimos 10 anos (RG ou CNH ou Conselho de Classe ou Passaporte ou Carteira de Identidade Militar)",
   "cns/n": "Certidão de Nascimento",
+  "estc/nd": `Certidão de acordo com o estado civil:
+Casada, Divorciada ou Viúva - Certidão de Casamento (com averbação nos dois últimos casos);
+União Estável - Declaração de União Estável + Certidão conforme o estado civil anterior;
+Solteira - Certidão de nascimento`,
   "cerc/n": "Certidão de Casamento",
   "cav/n": "Certidão de casamento averbada",
   "un/n": "Declaração de união estável + Certidão de Nascimento",
