@@ -5,7 +5,6 @@ import { useEffect, useState } from "react"
 import Loading from "./components/Loading"
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import CheckboxContextProvider from "./contexts/CheckboxContext"
 import TextFieldContextProvider from "./contexts/TextfieldContext"
 import ComponentThree from "./components/ActiveRegister"
 import Help from "./pages/Help"
@@ -19,13 +18,14 @@ function App() {
   // Remove later
   const [isLoading, setIsLoading] = useState<boolean>(true)
   useEffect(() => {
-    setIsLoading(false)
+    return () => {
+      setIsLoading(false)
+    }
   }, [])
 
   return (
-    <main className="min-h-5/6">
+    <main className="app min-h-5/6">
       <Router>
-        <CheckboxContextProvider>
           <PensionerContextProvider>
             <SecondCheckboxContextProvider>
               <TextFieldContextProvider>
@@ -55,7 +55,6 @@ function App() {
               </TextFieldContextProvider>
             </SecondCheckboxContextProvider>
           </PensionerContextProvider>
-        </CheckboxContextProvider>
       </Router>
     </main>
   )
