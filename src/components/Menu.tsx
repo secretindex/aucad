@@ -1,7 +1,6 @@
 import { Layout, Menu, Typography, Image } from "antd"
 import {
   HomeOutlined,
-  UserOutlined,
   QuestionCircleOutlined,
   ProfileOutlined
 } from "@ant-design/icons"
@@ -43,12 +42,7 @@ export default function MenuAnt() {
                 Home
               </Link>
             </Item>
-            <Item key="2" icon={<UserOutlined />}>
-              <Link to="/register" className="text-inherit">
-                Cadastro
-              </Link>
-            </Item>
-            <Item key="3" icon={<ProfileOutlined/>}>
+            <Item key="2" icon={<ProfileOutlined/>}>
               <Link to="/pensionistas" className="text-inherit">
                 Pensionistas
               </Link>
