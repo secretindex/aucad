@@ -1,6 +1,7 @@
 import { Typography, Layout, Popover, List } from "antd"
-import GitHubIcon from "@mui/icons-material/GitHub"
+
 import { Link as RouterLink } from "react-router-dom"
+import { GithubOutlined } from "@ant-design/icons"
 
 const { Content } = Layout
 const { Text, Title, Link } = Typography
@@ -69,7 +70,7 @@ const About = () => {
           className="flex flex-row justify-start items-center gap-2"
           style={{ width: "fit-content" }}
         >
-          <GitHubIcon className=" text-slate-950" />
+          <GithubOutlined className="text-slate-950" style={{ fontSize: "1.7rem" }} />
           <Text>Repositório Oficial</Text>
         </Link>
       </Content>
