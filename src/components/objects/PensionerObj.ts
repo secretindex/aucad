@@ -149,6 +149,10 @@ const pensionerObj: PensionerDocs = {
           },
         ],
       },
+      {
+        label: "não requerido",
+        value: "cns/nr"
+      }
     ],
   },
   pis: {
