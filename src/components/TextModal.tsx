@@ -20,7 +20,6 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
   const globalDocs = useContext(SecondCheckboxContext)
   const penDocs = useContext(PensionerContext)
   const text = textField!.text
-  // const textAreaRef = useRef<TextAreaRef | null>(null)
 
   const [_messageApi, contextHolder] = message.useMessage()
 
@@ -29,13 +28,13 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
       const finalText = new EndText(globalDocs!.docs)
       const rejectText = finalText.returnActivesRejectText()
 
-      textField?.setText(rejectText)
+      textField?.setText(rejectText.trim())
     }
     if (category === "pensioner") {
       const pensionerText = new EndText(penDocs!.docs)
       const penRejectText = pensionerText.returnPensionerText()
 
-      textField?.setText(penRejectText)
+      textField?.setText(penRejectText.trim())
     }
   }
 
@@ -49,11 +48,6 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
   }
 
   const handleTextFieldChange = (e: BaseSyntheticEvent) => {
-    // const textArea = textAreaRef.current!.resizableTextArea!.textArea
-    // const textRect = textArea.getBoundingClientRect()
-
-    // console.log(textRect)
-
     textField?.setText(e.target.value)
   }
 
@@ -84,6 +78,7 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
       >
         <TextArea
           aria-multiline
+          spellCheck="false"
           value={text}
           onChange={handleTextFieldChange}
           style={{ height: "400px", resize: "none" }}

@@ -4,11 +4,11 @@ import { TextFieldContext } from "../contexts/TextfieldContext"
 
 import DocumentOptions from "./SubComponents/DocumentOptions"
 
-import React, { useContext, useEffect, Dispatch, SetStateAction } from "react"
+import React, { useContext, useEffect } from "react"
 import { FloatButton, Typography, Row, Col, Space, Layout } from "antd"
 import TextModal from "./TextModal"
 import { PensionerDocs } from "../utils/docsInterface"
-// import activesDocument from "./objects/ActivesObj"
+
 import pensionerObj from "./objects/PensionerObj"
 import { PensionerContext, pensionerContextDocs } from "../contexts/PensionerContext"
 

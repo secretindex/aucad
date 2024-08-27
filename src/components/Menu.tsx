@@ -9,7 +9,6 @@ import AucadLogo from "../assets/aucad horizontal.svg"
 
 const { Header } = Layout
 const { Item } = Menu
-
 const { Title } = Typography
 
 export default function MenuAnt() {
