@@ -6,7 +6,7 @@ import EndText from "../utils/endTextGen"
 import { SecondCheckboxContext } from "../contexts/SecondCheckboxContext"
 import { PensionerContext } from "../contexts/PensionerContext"
 import { Category } from "./ActiveRegister"
-import AditionalRejectText from "./SubComponents/AditionalRejectText"
+// import AditionalRejectText from "./SubComponents/AditionalRejectText"
 import { TextAreaRef } from "antd/es/input/TextArea"
 
 const { TextArea } = Input
