@@ -23,11 +23,7 @@ export interface DocumentosOptionsProps {
   optionList?: OptList
 }
 
-interface PensionerProps {
-  setLoading: Dispatch<SetStateAction<boolean>>
-}
-
-const PensionerRegister: React.FC<PensionerProps> = ({ setLoading }) => {
+const PensionerRegister: React.FC = () => {
   const docs = useContext(PensionerContext)
   const textField = useContext(TextFieldContext)
 
@@ -42,7 +38,6 @@ const PensionerRegister: React.FC<PensionerProps> = ({ setLoading }) => {
   useEffect(() => {
     return () => {
       statusReset()
-      setLoading(false)
     }
   }, [])
 

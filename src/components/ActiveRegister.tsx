@@ -9,7 +9,7 @@ import { TextFieldContext } from "../contexts/TextfieldContext"
 
 import DocumentOptions from "./SubComponents/DocumentOptions"
 
-import React, { useContext, useEffect, Dispatch, SetStateAction } from "react"
+import React, { useContext, useEffect } from "react"
 import { FloatButton, Typography, Row, Col, Space, Layout } from "antd"
 import TextModal from "./TextModal"
 import { ComplexDocs } from "../utils/docsInterface"
@@ -26,11 +26,7 @@ export interface DocumentosOptionsProps {
   category: Category
 }
 
-interface ComponentThreeProps {
-  setLoading: Dispatch<SetStateAction<boolean>>
-}
-
-const ComponentThree: React.FC<ComponentThreeProps> = ({ setLoading }) => {
+const ComponentThree: React.FC = () => {
   const docs = useContext(SecondCheckboxContext)
   const textField = useContext(TextFieldContext)
 
@@ -45,7 +41,6 @@ const ComponentThree: React.FC<ComponentThreeProps> = ({ setLoading }) => {
   useEffect(() => {
     return () => {
       statusReset()
-      setLoading(false)
     }
   }, [])
 
