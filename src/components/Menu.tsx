@@ -2,7 +2,8 @@ import { Layout, Menu, Typography, Image } from "antd"
 import {
   HomeOutlined,
   QuestionCircleOutlined,
-  ProfileOutlined
+  ProfileOutlined,
+  // FireOutlined,
 } from "@ant-design/icons"
 import { Link } from "react-router-dom"
 import AucadLogo from "../assets/aucad horizontal.svg"
@@ -41,11 +42,16 @@ export default function MenuAnt() {
                 Home
               </Link>
             </Item>
-            <Item key="2" icon={<ProfileOutlined/>}>
+            <Item key="2" icon={<ProfileOutlined />}>
               <Link to="/pensionistas" className="text-inherit">
                 Pensionistas
               </Link>
             </Item>
+            {/* <Item key="3" icon={<FireOutlined />}>
+              <Link to="/teste" className="text-inherit">
+                Teste
+              </Link>
+            </Item> */}
           </Menu>
           <Item
             key="4"

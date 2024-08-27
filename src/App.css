@@ -16,6 +16,19 @@ body {
   height: 88%;
 }
 
+.dropdown {
+  height: 20rem;
+  width: 20rem;
+  border: 1px solid #12121230;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 2px #12121210;
+  padding: 0.5rem;
+}
+.dropdown li {
+  margin: 7px 0 !important;
+  padding: 0 !important;
+}
+
 .title-bg {
   position: relative;
   font-size: 2rem !important;

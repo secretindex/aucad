@@ -11,6 +11,7 @@ import PensionerRegister from "./components/PensionerRegister"
 import { PensionerContextProvider } from "./contexts/PensionerContext"
 
 import "./App.css"
+// import TestPage from "./pages/TestPage"
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
                     path="/pensionistas"
                     element={<PensionerRegister />}
                   ></Route>
+                  {/* <Route path="/teste" element={<TestPage />}></Route> */}
                   <Route path="/about" loader element={<About />}></Route>
                   <Route path="/about/help" element={<Help />}></Route>
                   <Route path="/about/contact" element={<Contact />}></Route>

@@ -1,4 +1,4 @@
-import { useContext, useState, BaseSyntheticEvent } from "react"
+import { useContext, useEffect, useState, useRef, BaseSyntheticEvent } from "react"
 import { Button, Modal, message, Input } from "antd"
 import { TextFieldContext } from "../contexts/TextfieldContext"
 import { CopyOutlined } from "@ant-design/icons"
@@ -7,6 +7,7 @@ import { SecondCheckboxContext } from "../contexts/SecondCheckboxContext"
 import { PensionerContext } from "../contexts/PensionerContext"
 import { Category } from "./ActiveRegister"
 import AditionalRejectText from "./SubComponents/AditionalRejectText"
+import { TextAreaRef } from "antd/es/input/TextArea"
 
 const { TextArea } = Input
 
@@ -18,10 +19,17 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const textField = useContext(TextFieldContext)
   const globalDocs = useContext(SecondCheckboxContext)
+  const textRef = useRef<TextAreaRef | null>(null)
   const penDocs = useContext(PensionerContext)
   const text = textField!.text
 
   const [_messageApi, contextHolder] = message.useMessage()
+
+  useEffect(() => {
+    textRef.current?.resizableTextArea!.textArea.addEventListener("click", (e: MouseEvent) => {
+      console.log(e)
+    })
+  }, [])
 
   const generateText = () => {
     if (category === "active") {
@@ -68,7 +76,6 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
       <Button type="primary" className="w-2/6" onClick={showModal}>
         Analisar
       </Button>
-      <AditionalRejectText></AditionalRejectText>
       <Modal
         title="Mensagem de Recusa"
         open={isModalOpen}
@@ -80,6 +87,7 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
           aria-multiline
           spellCheck="false"
           value={text}
+          ref={textRef}
           onChange={handleTextFieldChange}
           style={{ height: "400px", resize: "none" }}
         ></TextArea>

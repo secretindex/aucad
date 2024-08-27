@@ -1,10 +1,24 @@
-import { Button } from "antd"
+import { Button, List } from "antd"
 
-const AditionalRejectText = () => {
+const AditionalRejectText: React.FC = () => {
+  // Create an object and use map to render a button for each button
+
   return (
-    <div className="w-6 h-6 hidden bg-white rounded-md">
-      <header>Aditional Texts</header>
-      <Button>Oi</Button>
+    <div className="dropdown">
+      <header>
+        <h4 className="text-center font-bold">Textos adicionais</h4>
+      </header>
+      <List size="small" className="w-full">
+        <List.Item>
+          <Button className="w-full">Número do Suporte</Button>
+        </List.Item>
+        <List.Item>
+          <Button className="w-full">Identidade + 10</Button>
+        </List.Item>
+        <List.Item>
+          <Button className="w-full">Identidade incompleta</Button>
+        </List.Item>
+      </List>
     </div>
   )
 }
