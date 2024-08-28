@@ -1,6 +1,6 @@
 import { FC } from "react"
 
-import { Button, List } from "antd"
+import { List } from "antd"
 import AditionalTexts from "../objects/AditionalRejectTexts"
 import TextBox from "./rejectComponent/TextBox"
 
