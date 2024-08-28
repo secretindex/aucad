@@ -3,7 +3,7 @@ import {
   HomeOutlined,
   QuestionCircleOutlined,
   ProfileOutlined,
-  // FireOutlined,
+  FireOutlined,
 } from "@ant-design/icons"
 import { Link } from "react-router-dom"
 import AucadLogo from "../assets/aucad horizontal.svg"
@@ -47,11 +47,11 @@ export default function MenuAnt() {
                 Pensionistas
               </Link>
             </Item>
-            {/* <Item key="3" icon={<FireOutlined />}>
+            <Item key="3" icon={<FireOutlined />}>
               <Link to="/teste" className="text-inherit">
                 Teste
               </Link>
-            </Item> */}
+            </Item>
           </Menu>
           <Item
             key="4"
