@@ -17,15 +17,16 @@ body {
 }
 
 .dropdown {
-  height: 20rem;
-  width: 20rem;
-  border: 1px solid #12121230;
+  max-height: 250px;
+  width: 250px;
+  border: 1px solid #12121220;
   border-radius: 0.5rem;
-  box-shadow: 0 0 2px #12121210;
+  box-shadow: 0.2rem 0.2rem 0.7rem #12121215;
   padding: 0.5rem;
 }
+
 .dropdown li {
-  margin: 7px 0 !important;
+  margin: 0 !important;
   padding: 0 !important;
 }
 

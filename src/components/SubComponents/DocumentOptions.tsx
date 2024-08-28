@@ -6,12 +6,12 @@ const DocumentOptions: React.FC<DocumentosOptionsProps> = ({
   name,
   keyName,
   optionList,
-  category
+  category,
 }) => {
   return (
     <Col span={8}>
-      <Form.Item className=" w-full m-0">
-        <label className=" text-gray-500">{name}</label>
+      <Form.Item className=" w-full m-0 overflow-clip">
+        <label className=" text-gray-500 text-nowrap">{name}</label>
         <SelectComponent
           optionList={optionList}
           category={category}

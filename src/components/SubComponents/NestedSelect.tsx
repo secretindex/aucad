@@ -4,7 +4,6 @@ import { Cascader } from "antd"
 import { SecondCheckboxContext } from "../../contexts/SecondCheckboxContext"
 import { PensionerContext } from "../../contexts/PensionerContext"
 
-// Int = interface
 export interface OptionInt {
   label: string
   value: string | number | undefined

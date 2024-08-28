@@ -4,15 +4,21 @@ import { List } from "antd"
 import AditionalTexts from "../objects/AditionalRejectTexts"
 import TextBox from "./rejectComponent/TextBox"
 
-const AditionalRejectText: FC = () => {
+import { MouseCoords } from "../../pages/TestPage"
+
+interface RejectProps {
+  mouseCoords: MouseCoords
+}
+
+const AditionalRejectText: FC<RejectProps> = ({ mouseCoords }) => {
   // Create an object and use map to render a button for each button
   // Render as a div, not as a button
 
   console.log(AditionalTexts)
 
   return (
-    <div className="dropdown flex flex-col gap-4 overflow-auto">
-      <header>
+    <div style={{ zIndex: 1000, position: "absolute", top: mouseCoords.y, left: mouseCoords.x }} className="dropdown flex flex-col justify-between gap-4 overflow-auto bg-[#fefefe]">
+      <header className="mt-2">
         <h4 className="text-center font-bold">Textos adicionais</h4>
       </header>
       <List className="w-full">

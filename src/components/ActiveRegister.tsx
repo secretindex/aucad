@@ -9,7 +9,7 @@ import { TextFieldContext } from "../contexts/TextfieldContext"
 
 import DocumentOptions from "./SubComponents/DocumentOptions"
 
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { FloatButton, Typography, Row, Col, Space, Layout } from "antd"
 import TextModal from "./TextModal"
 import { ComplexDocs } from "../utils/docsInterface"
@@ -29,6 +29,7 @@ export interface DocumentosOptionsProps {
 const ComponentThree: React.FC = () => {
   const docs = useContext(SecondCheckboxContext)
   const textField = useContext(TextFieldContext)
+  const [optionsWidth, setOptionsWidth] = useState<boolean>(false)
 
   const statusReset = () => {
     textField?.setText("")
@@ -39,6 +40,14 @@ const ComponentThree: React.FC = () => {
   }
 
   useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth < 800) {
+        setOptionsWidth(true)
+      } else {
+        setOptionsWidth(false)
+      }
+    })
+
     return () => {
       statusReset()
     }
@@ -52,7 +61,7 @@ const ComponentThree: React.FC = () => {
   return (
     <Content className="flex flex-col gap-2 p-10 justify-center items-center max-h-full">
       <Row className="p-2 h-60 justify-center">
-        <Col span={18}>
+        <Col span={optionsWidth ? 30 : 18}>
           <Space direction="vertical" size="middle" className="flex w-full">
             <Content className="w-full flex justify-center">
               <Typography.Title className="title-bg" level={4}>

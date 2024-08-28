@@ -4,18 +4,20 @@ import { TextFieldContext } from "../contexts/TextfieldContext"
 
 import DocumentOptions from "./SubComponents/DocumentOptions"
 
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { FloatButton, Typography, Row, Col, Space, Layout } from "antd"
 import TextModal from "./TextModal"
 import { PensionerDocs } from "../utils/docsInterface"
 
 import pensionerObj from "./objects/PensionerObj"
-import { PensionerContext, pensionerContextDocs } from "../contexts/PensionerContext"
+import {
+  PensionerContext,
+  pensionerContextDocs,
+} from "../contexts/PensionerContext"
 
 const { Content } = Layout
 
 type OptList = Array<string | OptionInt | undefined>
-
 
 export interface DocumentosOptionsProps {
   name: string
@@ -26,6 +28,7 @@ export interface DocumentosOptionsProps {
 const PensionerRegister: React.FC = () => {
   const docs = useContext(PensionerContext)
   const textField = useContext(TextFieldContext)
+  const [optionsWidth, setOptionsWidth] = useState<boolean>(false)
 
   const statusReset = () => {
     textField?.setText("")
@@ -36,6 +39,13 @@ const PensionerRegister: React.FC = () => {
   }
 
   useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth < 800) {
+        setOptionsWidth(true)
+      } else {
+        setOptionsWidth(false)
+      }
+    })
     return () => {
       statusReset()
     }
@@ -50,7 +60,7 @@ const PensionerRegister: React.FC = () => {
   return (
     <Content className="flex flex-col gap-2 p-10 justify-center items-center max-h-full">
       <Row className="p-2 h-60 justify-center">
-        <Col span={18}>
+        <Col span={optionsWidth ? 30 : 18}>
           <Space direction="vertical" size="middle" className="flex w-full">
             <Content className="w-full flex justify-center">
               <Typography.Title className="title-bg" level={4}>
