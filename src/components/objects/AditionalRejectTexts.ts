@@ -31,6 +31,10 @@ const AditionalTexts: AdTextArray = [
     text: "Obs: Enviar CNH completa (partes superior e inferior);"
   },
   {
+    name: "Contracheque desatualizado",
+    text: "Obs: Contracheque data do mês MES, favor, enviar um correspondente ao mês anterior à data da realização seu cadastro"
+  },
+  {
     name: "Comprovante sem data",
     text: "Obs: Comprovante enviado não apresenta data de emissão. Favor, enviar comprovante com data e que esteja dentro do prazo acima;"
   },
