@@ -1,9 +1,10 @@
 import { Layout, Menu, Typography, Image } from "antd"
 import {
-  HomeOutlined,
   QuestionCircleOutlined,
   ProfileOutlined,
-  FireOutlined,
+  UserDeleteOutlined,
+  UserOutlined,
+  // FireOutlined,
 } from "@ant-design/icons"
 import { Link } from "react-router-dom"
 import AucadLogo from "../assets/aucad horizontal.svg"
@@ -37,19 +38,19 @@ export default function MenuAnt() {
             selectedKeys={[]}
             className="w-5/6 border-0 flex justify-center"
           >
-            <Item key="1" icon={<HomeOutlined />}>
+            <Item key="1" icon={<UserOutlined />}>
               <Link to="/" className="text-inherit">
-                Home
+                Ativos
               </Link>
             </Item>
-            <Item key="2" icon={<ProfileOutlined />}>
+            <Item key="2" icon={<UserDeleteOutlined />}>
+              <Link to="/inativos" className="text-inherit">
+                Inativos
+              </Link>
+            </Item>
+            <Item key="3" icon={<ProfileOutlined />}>
               <Link to="/pensionistas" className="text-inherit">
                 Pensionistas
-              </Link>
-            </Item>
-            <Item key="3" icon={<FireOutlined />}>
-              <Link to="/teste" className="text-inherit">
-                Teste
               </Link>
             </Item>
           </Menu>
