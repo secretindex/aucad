@@ -37,17 +37,18 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const textRef = useRef<TextAreaRef | null>(null)
-  const rejTextRef = useRef<React.MutableRefObject<any> | null>(null)
+  // const rejTextRef = useRef<React.MutableRefObject<any> | null>(null)
 
   const [showReject, setShowReject] = useState<boolean>()
   const [mouseCoords, setMouseCoords] = useState<MouseCoords>({ x: 0, y: 0 })
 
-  const textarea = textRef.current?.resizableTextArea!.textArea
+  let textarea: HTMLTextAreaElement | undefined = undefined
 
   const handleContextMenu: MouseEventHandler<HTMLTextAreaElement> = (
     e: React.MouseEvent
   ) => {
     e.preventDefault()
+    textarea = textRef.current?.resizableTextArea!.textArea
 
     const rect = textarea!.getBoundingClientRect()
 
@@ -60,26 +61,29 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
   }
 
   const handlePasteText = () => {
+    textarea = textRef.current?.resizableTextArea!.textArea
+
     if (textarea && textField!.text) {
       const start = textarea!.selectionStart
       const end = textarea!.selectionEnd
       const before = textField!.text.substring(0, start)
       const after = textField!.text.substring(end)
       const newText = before + pasteText!.addText + after
-      console.log(newText);
+
+      console.log(newText)
+
+      textField?.setText(newText)
+    }
+  }
+
+  const handleClick = (e: any) => {
+    if (e.target.closest("div").classList.contains("click-text")) {
+      console.log(e.target.closest("div").classList.contains("click-text"))
+      handlePasteText()
     }
 
-
-  }
-
-  const handleClick = () => {
-    handlePasteText()
     setShowReject(false)
   }
-
-  // const hanleDomClick = (e: Document) => {
-  //   console.log(e)
-  // }
 
   const text = textField!.text
 
@@ -89,7 +93,7 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
     return () => {
       document.removeEventListener("click", handleClick)
     }
-  }, [])
+  }, [pasteText?.addText])
 
   const generateText = () => {
     if (category === "active") {

@@ -19,7 +19,7 @@ const AditionalRejectText: FC<RejectProps> = ({ mouseCoords }) => {
       <List className="w-full">
         {AditionalTexts.map((el) => {
           return (
-            <List.Item>
+            <List.Item key={el.name}>
               <TextBox text={el.text} title={el.name} />
             </List.Item>
           )
