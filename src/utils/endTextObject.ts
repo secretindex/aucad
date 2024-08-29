@@ -33,6 +33,18 @@ interface FinalTextDocuments {
   depId: DependentTypeInvalid | DependentTypeValid
 }
 
+export interface InactivesDocuments {
+  foto: boolean
+  id: IDInvalid | IDValid
+  residencia: ResidenceInvalid | ResidenceValid
+  estadoCivil: CivilStatusInvalid | CivilStatusValid
+  contracheque: boolean
+  pis: boolean
+  veracidade: boolean
+  comprovanteEstado: boolean
+  depId: DependentTypeInvalid | DependentTypeValid
+}
+
 export interface PensionerDocuments {
   foto: boolean
   id: IDInvalid | IDValid

@@ -117,6 +117,67 @@ export interface PensionerDocs {
   }
 }
 
+export interface InactivesInt {
+  foto: {
+    name: string
+    required: boolean
+    present: boolean
+    optionList?: NestedOption[]
+  }
+  id: {
+    name: string
+    required: boolean
+    present: boolean
+    options: "valido" | "+10" | undefined
+    optionList: NestedOption[]
+  }
+  residencia: {
+    name: string
+    required: boolean
+    present: boolean
+    options: "valido" | "+60" | "terceiros" | undefined
+    optionList: NestedOption[]
+  }
+  estadoCivil: {
+    name: string
+    required: boolean
+    present: boolean
+    options: "solteiro" | "casado" | "uniao" | undefined
+    optionList: NestedOption[]
+  }
+  pis: {
+    name: string
+    required: boolean
+    present: boolean
+    optionList?: NestedOption[]
+  }
+  contracheque: {
+    name: string
+    required: boolean
+    present: boolean
+    optionList?: NestedOption[]
+  }
+  veracidade: {
+    name: string
+    required: boolean
+    present: boolean
+    optionList?: NestedOption[]
+  }
+  comprovanteEstado: {
+    name: string
+    required: boolean
+    present: boolean
+    optionList?: NestedOption[]
+  }
+  depId: {
+    name: string
+    required: boolean
+    present: boolean
+    options: "nodep" | "dep" | undefined
+    optionList: NestedOption[]
+  }
+}
+
 export interface ComplexDocs {
   foto: {
     name: string

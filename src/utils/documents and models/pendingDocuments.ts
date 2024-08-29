@@ -43,6 +43,15 @@ Solteira - Certidão de nascimento`,
   "cnd/n": "Enviar certidão de nascimento do dependente DEP",
 }
 
+export type InactiveStandard = {
+  foto: string
+  pis: string
+  contracheque: string
+  veracidade: string
+  comprovanteEstado: string
+}
+
+
 export type StandardDocuments = {
   foto: string
   pis: string
