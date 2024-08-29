@@ -12,6 +12,7 @@ import { PensionerContextProvider } from "./contexts/PensionerContext"
 
 import "./App.css"
 import TestPage from "./pages/TestPage"
+import PasteTextContextProvider from "./contexts/PasteTextContext"
 
 function App() {
   return (
@@ -20,20 +21,23 @@ function App() {
         <PensionerContextProvider>
           <SecondCheckboxContextProvider>
             <TextFieldContextProvider>
-              <MenuAnt />
-              <section className="h-full px-6">
-                <Routes>
-                  <Route path="/" element={<ComponentThree />}></Route>
-                  <Route
-                    path="/pensionistas"
-                    element={<PensionerRegister />}
-                  ></Route>
-                  <Route path="/teste" element={<TestPage />}></Route>
-                  <Route path="/about" loader element={<About />}></Route>
-                  <Route path="/about/help" element={<Help />}></Route>
-                  <Route path="/about/contact" element={<Contact />}></Route>
-                </Routes>
-              </section>
+              <PasteTextContextProvider>
+                <MenuAnt />
+                <section className="h-full px-6">
+                  <Routes>
+                    <Route path="/" element={<ComponentThree />}></Route>
+                    <Route
+                      path="/pensionistas"
+                      element={<PensionerRegister />}
+                    ></Route>
+                    <Route path="/teste" element={<TestPage />}></Route>
+                    <Route path="/about" loader element={<About />}></Route>
+                    <Route path="/about/help" element={<Help />}></Route>
+                    <Route path="/about/contact" element={<Contact />}></Route>
+                  </Routes>
+                </section>
+
+              </PasteTextContextProvider>
             </TextFieldContextProvider>
           </SecondCheckboxContextProvider>
         </PensionerContextProvider>

@@ -1,4 +1,5 @@
-import { FC } from "react"
+import { FC, useContext } from "react"
+import { PasteTextContext } from "../../../contexts/PasteTextContext"
 
 interface TextBoxProps {
   title: string
@@ -6,8 +7,10 @@ interface TextBoxProps {
 }
 
 const TextBox: FC<TextBoxProps> = ({ title, text }) => {
+  const addText = useContext(PasteTextContext)
+
   const handleClick = () => {
-    console.log(text)
+    addText?.setAddText(text)
   }
 
   return (

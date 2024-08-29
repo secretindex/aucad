@@ -6,6 +6,7 @@ import {
   BaseSyntheticEvent,
   MouseEventHandler,
 } from "react"
+
 import { Button, Modal, message, Input } from "antd"
 import { TextFieldContext } from "../contexts/TextfieldContext"
 import { CopyOutlined } from "@ant-design/icons"
@@ -18,6 +19,7 @@ import AditionalRejectText from "./SubComponents/AditionalRejectText"
 
 import { TextAreaRef } from "antd/es/input/TextArea"
 import { MouseCoords } from "../pages/TestPage"
+import { PasteTextContext } from "../contexts/PasteTextContext"
 
 const { TextArea } = Input
 
@@ -26,38 +28,60 @@ interface TextModalProps {
 }
 
 const TextModal: React.FC<TextModalProps> = ({ category }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
   const textField = useContext(TextFieldContext)
   const globalDocs = useContext(SecondCheckboxContext)
-  const textRef = useRef<TextAreaRef | null>(null)
   const penDocs = useContext(PensionerContext)
+  const pasteText = useContext(PasteTextContext)
+
+  const [_messageApi, contextHolder] = message.useMessage()
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const textRef = useRef<TextAreaRef | null>(null)
+  const rejTextRef = useRef<React.MutableRefObject<any> | null>(null)
 
   const [showReject, setShowReject] = useState<boolean>()
   const [mouseCoords, setMouseCoords] = useState<MouseCoords>({ x: 0, y: 0 })
+
+  const textarea = textRef.current?.resizableTextArea!.textArea
 
   const handleContextMenu: MouseEventHandler<HTMLTextAreaElement> = (
     e: React.MouseEvent
   ) => {
     e.preventDefault()
 
-    const rect = textRef.current?.resizableTextArea!.textArea.getBoundingClientRect()
+    const rect = textarea!.getBoundingClientRect()
 
     setMouseCoords({
       x: e.clientX - rect!.left + 20,
-      y: e.clientY - rect!.top + 60,
+      y: e.clientY - rect!.top + 50,
     })
 
     setShowReject(true)
   }
 
+  const handlePasteText = () => {
+    if (textarea && textField!.text) {
+      const start = textarea!.selectionStart
+      const end = textarea!.selectionEnd
+      const before = textField!.text.substring(0, start)
+      const after = textField!.text.substring(end)
+      const newText = before + pasteText!.addText + after
+      console.log(newText);
+    }
+
+
+  }
+
   const handleClick = () => {
+    handlePasteText()
     setShowReject(false)
   }
 
+  // const hanleDomClick = (e: Document) => {
+  //   console.log(e)
+  // }
 
   const text = textField!.text
-
-  const [_messageApi, contextHolder] = message.useMessage()
 
   useEffect(() => {
     document.addEventListener("click", handleClick)
