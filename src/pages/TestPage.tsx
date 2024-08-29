@@ -1,8 +1,6 @@
 import { MouseEventHandler, useState } from "react"
 import AditionalRejectText from "../components/SubComponents/AditionalRejectText"
 
-// TODO: Create a new branch for right click element
-
 export interface MouseCoords {
   x: number
   y: number
