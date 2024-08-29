@@ -19,6 +19,10 @@ const AditionalTexts: AdTextArray = [
     text: "Obs: Para dependente filho(a) com mais de 21 anos, é necessário que se apresente laudo/atestado médico caso seja declarado inválido. Caso não, remover como dependente previdenciário;"
   },
   {
+    name: "Comprovante sem data",
+    text: "Obs: Comprovante enviado não possui data de emissão. Favor, enviar outro comprovante dentro do prazo acima;"
+  },
+  {
     name: "Identidade incompleta",
     text: "Obs: Enviar identidade frente e verso;"
   },
