@@ -39,7 +39,6 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const textRef = useRef<TextAreaRef | null>(null)
-  // const rejTextRef = useRef<React.MutableRefObject<any> | null>(null)
 
   const [showReject, setShowReject] = useState<boolean>()
   const [mouseCoords, setMouseCoords] = useState<MouseCoords>({ x: 0, y: 0 })
@@ -68,9 +67,11 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
     if (textarea && textField!.text) {
       const start = textarea!.selectionStart
       const end = textarea!.selectionEnd
+
       const before = textField!.text.substring(0, start)
       const after = textField!.text.substring(end)
-      const newText = before + pasteText!.addText + after
+
+      const newText = before + "\n" + pasteText!.addText + "\n" + after
 
       console.log(newText)
 
