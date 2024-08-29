@@ -10,16 +10,17 @@ import {
 import { Button, Modal, message, Input } from "antd"
 import { TextFieldContext } from "../contexts/TextfieldContext"
 import { CopyOutlined } from "@ant-design/icons"
-import EndText from "../utils/endTextGen"
 import { SecondCheckboxContext } from "../contexts/SecondCheckboxContext"
 import { PensionerContext } from "../contexts/PensionerContext"
 import { Category } from "./ActiveRegister"
 
 import AditionalRejectText from "./SubComponents/AditionalRejectText"
+import EndText from "../utils/endTextGen"
 
 import { TextAreaRef } from "antd/es/input/TextArea"
 import { MouseCoords } from "../pages/TestPage"
 import { PasteTextContext } from "../contexts/PasteTextContext"
+import { InactivesContext } from "../contexts/InactivesContext"
 
 const { TextArea } = Input
 
@@ -32,6 +33,7 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
   const globalDocs = useContext(SecondCheckboxContext)
   const penDocs = useContext(PensionerContext)
   const pasteText = useContext(PasteTextContext)
+  const inacDocs = useContext(InactivesContext)
 
   const [_messageApi, contextHolder] = message.useMessage()
 
@@ -101,6 +103,12 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
       const rejectText = finalText.returnActivesRejectText()
 
       textField?.setText(rejectText.trim())
+    }
+    if (category === "inactive") {
+      const inactiveText = new EndText(inacDocs!.docs)
+      const inacRejectText = inactiveText.returnInactiveText()
+
+      textField?.setText(inacRejectText.trim())
     }
     if (category === "pensioner") {
       const pensionerText = new EndText(penDocs!.docs)
