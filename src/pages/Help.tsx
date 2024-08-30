@@ -5,7 +5,7 @@ const { Text, Title } = Typography
 const Help = () => {
   return (
     <>
-      <Content className=" py-4">
+      <Content className="p-4">
         <Title level={1} style={{ fontSize: "1.8rem" }}>
           Aucad - Auxiliar de Cadastro
         </Title>

@@ -15,7 +15,7 @@ const popContent = (
 const About = () => {
 
   return (
-    <section className="py-5 flex flex-col">
+    <section className="p-5 flex flex-col">
       <Title level={2} style={{ fontSize: "1.5rem", margin: "0" }}>
         Feito por
         <Popover
