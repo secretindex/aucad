@@ -18,7 +18,7 @@ import InactiveRegister from "./components/InactiveRegister"
 
 function App() {
   return (
-    <main className="app min-h-5/6">
+    <main className="app min-h-full">
       <Router>
         <InactivesContextProvider>
           <PensionerContextProvider>
@@ -26,7 +26,7 @@ function App() {
               <TextFieldContextProvider>
                 <PasteTextContextProvider>
                   <MenuAnt />
-                  <section className="h-full px-6">
+                  <section className="h-full">
                     <Routes>
                       <Route path="/" element={<Home />}></Route>
                       <Route path="/ativos" element={<ComponentThree />}></Route>

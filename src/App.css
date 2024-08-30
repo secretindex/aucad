@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 /* Font not working */
 
@@ -26,7 +26,7 @@ body {
 }
 
 .app {
-  height: 88%;
+  height: 100%;
 }
 
 .dropdown {
@@ -48,6 +48,32 @@ body {
   font-size: 2rem !important;
 }
 
+.cadastro-home {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  padding: 0 0.7rem;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.cadastro-home::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  width: 100%;
+  height: 90%;
+  background: rgb(157, 221, 201);
+  background: linear-gradient(
+    45deg,
+    rgba(157, 221, 201) 0%,
+    rgba(93, 168, 133) 100%
+  );
+  border-radius: 0.5rem;
+  z-index: -10;
+}
+
 .title-bg::after {
   content: "";
   position: absolute;
@@ -56,7 +82,11 @@ body {
   width: 100%;
   height: 90%;
   background: rgb(157, 221, 201);
-  background: linear-gradient(45deg, rgba(157, 221, 201, 0.418) 0%, rgba(93, 168, 133, 0.404) 100%);
+  background: linear-gradient(
+    45deg,
+    rgba(157, 221, 201, 0.418) 0%,
+    rgba(93, 168, 133, 0.404) 100%
+  );
   transform: skewX(-20deg);
   z-index: -10;
 }

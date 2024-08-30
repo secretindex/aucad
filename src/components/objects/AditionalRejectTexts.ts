@@ -23,6 +23,10 @@ const AditionalTexts: AdTextArray = [
     text: "Obs: Comprovante enviado não possui data de emissão. Favor, enviar outro comprovante dentro do prazo acima;"
   },
   {
+    name: "Dec. de Res. Não Oficial",
+    text: "Obs: Aceitamos apenas a declaração oficial da Amprev. Favor, assine e anexe ao cadastro;"
+  },
+  {
     name: "Identidade incompleta",
     text: "Obs: Enviar identidade frente e verso;"
   },
