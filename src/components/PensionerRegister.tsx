@@ -14,6 +14,7 @@ import {
   PensionerContext,
   pensionerContextDocs,
 } from "../contexts/PensionerContext"
+import { useNavigate } from "react-router-dom"
 
 const { Content } = Layout
 
@@ -29,6 +30,8 @@ const PensionerRegister: React.FC = () => {
   const docs = useContext(PensionerContext)
   const textField = useContext(TextFieldContext)
   const [optionsWidth, setOptionsWidth] = useState<boolean>(false)
+
+  const navigate = useNavigate()
 
   const statusReset = () => {
     textField?.setText("")
@@ -54,7 +57,7 @@ const PensionerRegister: React.FC = () => {
   const restartAction = () => {
     statusReset()
 
-    window.location.reload()
+    navigate(0)
   }
 
   return (

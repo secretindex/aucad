@@ -12,6 +12,7 @@ import { InactivesContext, inactivesDefault } from "../contexts/InactivesContext
 
 import inactiveDocuments from "./objects/InactiveObj"
 import { InactivesInt } from "../utils/docsInterface"
+import { useNavigate } from "react-router-dom"
 
 const { Content } = Layout
 
@@ -27,6 +28,8 @@ const InactiveRegister: React.FC = () => {
   const docs = useContext(InactivesContext)
   const textField = useContext(TextFieldContext)
   const [optionsWidth, setOptionsWidth] = useState<boolean>(false)
+
+  const navigate = useNavigate()
 
   const statusReset = () => {
     textField?.setText("")
@@ -52,7 +55,7 @@ const InactiveRegister: React.FC = () => {
   const restartAction = () => {
     statusReset()
 
-    window.location.reload()
+    navigate(0)
   }
 
   return (
