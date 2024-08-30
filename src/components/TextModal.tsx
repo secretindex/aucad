@@ -8,8 +8,8 @@ import {
 } from "react"
 
 import { Button, Modal, message, Input } from "antd"
-import { TextFieldContext } from "../contexts/TextfieldContext"
 import { CopyOutlined } from "@ant-design/icons"
+import { TextFieldContext } from "../contexts/TextfieldContext"
 import { SecondCheckboxContext } from "../contexts/SecondCheckboxContext"
 import { PensionerContext } from "../contexts/PensionerContext"
 import { Category } from "./ActiveRegister"

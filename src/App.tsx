@@ -10,6 +10,7 @@ import Contact from "./pages/Contact"
 import PensionerRegister from "./components/PensionerRegister"
 import { PensionerContextProvider } from "./contexts/PensionerContext"
 import { InactivesContextProvider } from "./contexts/InactivesContext"
+import Home from "./pages/Home"
 
 import "./App.css"
 import PasteTextContextProvider from "./contexts/PasteTextContext"
@@ -27,7 +28,8 @@ function App() {
                   <MenuAnt />
                   <section className="h-full px-6">
                     <Routes>
-                      <Route path="/" element={<ComponentThree />}></Route>
+                      <Route path="/" element={<Home />}></Route>
+                      <Route path="/ativos" element={<ComponentThree />}></Route>
                       <Route
                         path="/inativos"
                         element={<InactiveRegister />}

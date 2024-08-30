@@ -65,7 +65,7 @@ const ComponentThree: React.FC = () => {
           <Space direction="vertical" size="middle" className="flex w-full">
             <Content className="w-full flex justify-center">
               <Typography.Title className="title-bg" level={4}>
-                CADASTRO
+                ATIVOS
               </Typography.Title>
             </Content>
             <Row gutter={[16, 8]}>

@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <ConfigProvider componentSize="large" theme={{
       token: {
         colorPrimary: "#26a69a",
-        fontFamily: "Inter",
+        fontFamily: "Rubik",
       }
     }}>
       <App />
