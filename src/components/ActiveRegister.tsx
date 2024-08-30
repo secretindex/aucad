@@ -13,7 +13,7 @@ import React, { useContext, useEffect, useState } from "react"
 import { FloatButton, Typography, Row, Col, Space, Layout } from "antd"
 import TextModal from "./TextModal"
 import { ComplexDocs } from "../utils/docsInterface"
-// import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const { Content } = Layout
 
@@ -31,13 +31,8 @@ const ComponentThree: React.FC = () => {
   const docs = useContext(SecondCheckboxContext)
   const textField = useContext(TextFieldContext)
   const [optionsWidth, setOptionsWidth] = useState<boolean>(false)
-  const [, setRefresh] = useState<number>(0);
 
-  const handleReset = () => {
-    setRefresh(prev => prev + 1);
-  };
-
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const statusReset = () => {
     textField?.setText("")
@@ -64,7 +59,7 @@ const ComponentThree: React.FC = () => {
   const restartAction = () => {
     statusReset()
 
-    handleReset()
+    navigate(0)
   }
 
   return (
