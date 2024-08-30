@@ -14,7 +14,7 @@ import {
   PensionerContext,
   pensionerContextDocs,
 } from "../contexts/PensionerContext"
-import { useNavigate } from "react-router-dom"
+// import { useNavigate } from "react-router-dom"
 
 const { Content } = Layout
 
@@ -31,7 +31,14 @@ const PensionerRegister: React.FC = () => {
   const textField = useContext(TextFieldContext)
   const [optionsWidth, setOptionsWidth] = useState<boolean>(false)
 
-  const navigate = useNavigate()
+
+  const [, setRefresh] = useState<number>(0)
+
+  const handleReset = () => {
+    setRefresh((prev) => prev + 1)
+  }
+
+  // const navigate = useNavigate()
 
   const statusReset = () => {
     textField?.setText("")
@@ -57,7 +64,7 @@ const PensionerRegister: React.FC = () => {
   const restartAction = () => {
     statusReset()
 
-    navigate(0)
+    handleReset()
   }
 
   return (
