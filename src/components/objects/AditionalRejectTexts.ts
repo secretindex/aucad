@@ -39,8 +39,8 @@ const AditionalTexts: AdTextArray = [
     text: "Obs: Contracheque data do mês MES, favor, enviar um correspondente ao mês anterior à data da realização seu cadastro"
   },
   {
-    name: "Comprovante sem data",
-    text: "Obs: Comprovante enviado não apresenta data de emissão. Favor, enviar comprovante com data e que esteja dentro do prazo acima;"
+    name: "Comprovante desatualizado",
+    text: "Obs: Comprovante enviado foi emitido em MES. Favor, enviar um comprovante recente;"
   },
   {
     name: "Identidade ilegível",
