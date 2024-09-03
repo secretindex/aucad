@@ -6,8 +6,6 @@ export interface MouseCoords {
   y: number
 }
 
-// remove test page
-
 const TestPage: React.FC = () => {
   const [showReject, setShowReject] = useState<boolean>()
   const [mouseCoords, setMouseCoords] = useState<MouseCoords>({ x: 0, y: 0 })

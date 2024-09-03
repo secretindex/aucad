@@ -1,56 +1,40 @@
 import MenuAnt from "./components/Menu"
 import About from "./pages/About"
-import { SecondCheckboxContextProvider } from "./contexts/SecondCheckboxContext"
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import TextFieldContextProvider from "./contexts/TextfieldContext"
-import ComponentThree from "./components/ActiveRegister"
 import Help from "./pages/Help"
 import Contact from "./pages/Contact"
-import PensionerRegister from "./components/PensionerRegister"
-import { PensionerContextProvider } from "./contexts/PensionerContext"
-import { InactivesContextProvider } from "./contexts/InactivesContext"
-import Home from "./pages/Home"
+
+import activesDocument from "./components/objects/ActivesObj"
+import pensionerObj from "./components/objects/PensionerObj"
+import inactiveDocuments from "./components/objects/InactiveObj"
 
 import "./App.css"
-import PasteTextContextProvider from "./contexts/PasteTextContext"
-import InactiveRegister from "./components/InactiveRegister"
+
+import RegisterPage from "./components/RegisterPage"
+import Home from "./pages/Home"
 
 function App() {
   return (
     <main className="app min-h-full">
       <Router>
-        <InactivesContextProvider>
-          <PensionerContextProvider>
-            <SecondCheckboxContextProvider>
-              <TextFieldContextProvider>
-                <PasteTextContextProvider>
-                  <MenuAnt />
-                  <section className="h-full">
-                    <Routes>
-                      <Route path="/" element={<Home />}></Route>
-                      <Route path="/ativos" element={<ComponentThree />}></Route>
-                      <Route
-                        path="/inativos"
-                        element={<InactiveRegister />}
-                      ></Route>
-                      <Route
-                        path="/pensionistas"
-                        element={<PensionerRegister />}
-                      ></Route>
-                      <Route path="/about" loader element={<About />}></Route>
-                      <Route path="/about/help" element={<Help />}></Route>
-                      <Route
-                        path="/about/contact"
-                        element={<Contact />}
-                      ></Route>
-                    </Routes>
-                  </section>
-                </PasteTextContextProvider>
-              </TextFieldContextProvider>
-            </SecondCheckboxContextProvider>
-          </PensionerContextProvider>
-        </InactivesContextProvider>
+        <MenuAnt />
+        <section className="h-full">
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+
+            <Route path="/ativos" element={<RegisterPage title="Ativos" category="active" documents={activesDocument} />}></Route>
+            <Route path="/inativos" element={<RegisterPage title="Inativos" category="inactive" documents={inactiveDocuments} />}></Route>
+            <Route path="/pensionistas" element={<RegisterPage title="Pensionistas" category="pensioner" documents={pensionerObj} />}></Route>
+
+            <Route path="/about" loader element={<About />}></Route>
+            <Route path="/about/help" element={<Help />}></Route>
+            <Route
+              path="/about/contact"
+              element={<Contact />}
+            ></Route>
+          </Routes>
+        </section>
       </Router>
     </main>
   )

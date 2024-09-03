@@ -1,9 +1,9 @@
 import { FC, useContext, useState } from "react"
 import { Select } from "antd"
-import NestedSelect from "./NestedSelect"
+import NestedSelect, { OptionInt } from "./NestedSelect"
 import { SecondCheckboxContentType, SecondCheckboxContext } from "../../contexts/SecondCheckboxContext"
 import { PensionerContentType, PensionerContext } from "../../contexts/PensionerContext"
-import { DocumentosOptionsProps } from "../ActiveRegister"
+import { DocumentosOptionsProps } from "./types/essentialTypes"
 import { InactivesContext, InactivesContextType } from "../../contexts/InactivesContext"
 import FinalTextDocuments, { InactivesDocuments, PensionerDocuments } from "../../utils/endTextObject"
 
@@ -57,22 +57,22 @@ const SelectComponent: FC<DocumentosOptionsProps> = ({
       </Select>
     )
   }
-
-  if (optionList.every((e) => typeof e !== "object")) {
-    console.log(optionList)
-    return (
-      <Select value={field} onChange={handleChange}>
-        {optionList.map((opt) => (
-          <Option key={opt as string} value={opt}>
-            {opt as string}
-          </Option>
-        ))}
-      </Select>
-    )
-  } else if (optionList.every((e) => typeof e === "object")) {
+  // if (optionList.every((e) => typeof e !== "object")) {
+  //   console.log(optionList)
+  //   return (
+  //     <Select value={field} onChange={handleChange}>
+  //       {optionList.map((opt) => (
+  //         <Option key={opt as string} value={opt}>
+  //           {opt as string}
+  //         </Option>
+  //       ))}
+  //     </Select>
+  //   )
+  // } 
+  else if (optionList.every((e: any) => typeof e === "object")) {
     return (
       <NestedSelect
-        optionList={optionList}
+        optionList={optionList as OptionInt[]}
         keyName={keyName}
         category={category}
       />
