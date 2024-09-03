@@ -57,19 +57,18 @@ const SelectComponent: FC<DocumentosOptionsProps> = ({
       </Select>
     )
   }
-  // if (optionList.every((e) => typeof e !== "object")) {
-  //   console.log(optionList)
-  //   return (
-  //     <Select value={field} onChange={handleChange}>
-  //       {optionList.map((opt) => (
-  //         <Option key={opt as string} value={opt}>
-  //           {opt as string}
-  //         </Option>
-  //       ))}
-  //     </Select>
-  //   )
-  // } 
-  else if (optionList.every((e: any) => typeof e === "object")) {
+  if (optionList.every((e) => typeof e !== "object")) {
+    console.log(optionList)
+    return (
+      <Select value={field} onChange={handleChange}>
+        {optionList.map((opt) => (
+          <Option key={opt as string} value={opt}>
+            {opt as string}
+          </Option>
+        ))}
+      </Select>
+    )
+  } else if (optionList.every((e: any) => typeof e === "object")) {
     return (
       <NestedSelect
         optionList={optionList as OptionInt[]}
