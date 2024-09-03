@@ -1,4 +1,4 @@
-import { DocumentosOptionsProps } from "../ActiveRegister"
+import { DocumentosOptionsProps } from "./types/essentialTypes"
 import { Col, Form } from "antd"
 import SelectComponent from "./SelectComponent"
 
