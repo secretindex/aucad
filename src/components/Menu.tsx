@@ -1,10 +1,5 @@
 import { Layout, Menu, Typography, Image } from "antd"
-import {
-  QuestionCircleOutlined,
-  ProfileOutlined,
-  UserDeleteOutlined,
-  UserOutlined,
-} from "@ant-design/icons"
+import { QuestionCircleOutlined, ProfileOutlined, UserDeleteOutlined, UserOutlined } from "@ant-design/icons"
 import { Link } from "react-router-dom"
 import AucadLogo from "../assets/aucad horizontal.svg"
 
@@ -26,19 +21,10 @@ export default function MenuAnt() {
         >
           <Title style={{ margin: 0 }} className="flex items-center" level={1}>
             <Link to="/">
-              <Image
-                src={AucadLogo}
-                preview={false}
-                alt="Aucad Logo"
-                width={"100px"}
-              ></Image>
+              <Image src={AucadLogo} preview={false} alt="Aucad Logo" width={"100px"}></Image>
             </Link>
           </Title>
-          <Menu
-            mode="horizontal"
-            selectedKeys={[]}
-            className="w-5/6 border-0 flex justify-center"
-          >
+          <Menu mode="horizontal" selectedKeys={[]} className="w-5/6 border-0 flex justify-center">
             <Item key="1" icon={<UserOutlined />}>
               <Link to="/ativos" className="text-inherit">
                 Ativos
@@ -55,11 +41,7 @@ export default function MenuAnt() {
               </Link>
             </Item>
           </Menu>
-          <Item
-            key="4"
-            className="no-underline"
-            icon={<QuestionCircleOutlined />}
-          >
+          <Item key="4" className="no-underline" icon={<QuestionCircleOutlined />}>
             <Link to="/about" className="text-inherit">
               Sobre
             </Link>

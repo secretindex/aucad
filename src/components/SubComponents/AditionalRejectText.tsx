@@ -20,10 +20,10 @@ const AditionalRejectText: FC<RejectProps> = ({ mouseCoords }) => {
     if (menu) {
       const bound = menu.getBoundingClientRect()
 
-      console.log(bound.bottom  + " " + window.innerHeight)
+      console.log(bound.bottom + " " + window.innerHeight)
 
       if (bound.bottom > window.innerHeight) {
-        menu.style.top = `${Math.abs(mouseCoords.y - (bound.bottom - window.innerHeight))}px`;
+        menu.style.top = `${Math.abs(mouseCoords.y - (bound.bottom - window.innerHeight))}px`
       }
     }
   }, [mouseCoords])

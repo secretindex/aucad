@@ -19,18 +19,19 @@ interface NestedSelectProps {
   category: "active" | "inactive" | "pensioner"
 }
 
-const NestedSelect: React.FC<NestedSelectProps> = ({
-  optionList,
-  keyName,
-  category,
-}) => {
+const NestedSelect: React.FC<NestedSelectProps> = ({ optionList, keyName, category }) => {
   const options: OptionInt[] = optionList
   const globalDocs = useContext(SecondCheckboxContext)
   const pensionerDocs = useContext(PensionerContext)
   const inactiveDocs = useContext(InactivesContext)
 
   const onChange: CascaderProps<OptionInt>["onChange"] = (value) => {
-    const lastVal = value[value.length - 1]
+    const lastVal = value && value[value.length - 1]
+
+    if (typeof lastVal === "undefined") {
+      console.log(keyName + " " + lastVal)
+    }
+
     if (category === "active") {
       globalDocs?.setDocs({
         ...globalDocs.docs,
@@ -55,13 +56,7 @@ const NestedSelect: React.FC<NestedSelectProps> = ({
     console.log(keyName + " " + lastVal)
   }
 
-  return (
-    <Cascader
-      options={options}
-      onChange={onChange}
-      placeholder="Please select"
-    />
-  )
+  return <Cascader options={options} onChange={onChange} placeholder="Please select" />
 }
 
 export default NestedSelect

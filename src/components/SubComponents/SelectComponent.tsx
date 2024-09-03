@@ -11,11 +11,7 @@ type DocsType = SecondCheckboxContentType | PensionerContentType | InactivesCont
 
 const { Option } = Select
 
-const SelectComponent: FC<DocumentosOptionsProps> = ({
-  keyName,
-  optionList,
-  category,
-}) => {
+const SelectComponent: FC<DocumentosOptionsProps> = ({ keyName, optionList, category }) => {
   const globalDocs = useContext(SecondCheckboxContext)
   const pensionerDocs = useContext(PensionerContext)
   const inactiveDocs = useContext(InactivesContext)
@@ -24,7 +20,7 @@ const SelectComponent: FC<DocumentosOptionsProps> = ({
   const setKeyValues = (docs: DocsType, value: string) => {
     return {
       ...docs.docs,
-      [keyName]: value == "sim" ? true : false
+      [keyName]: value == "sim" ? true : false,
     }
   }
 
@@ -34,7 +30,7 @@ const SelectComponent: FC<DocumentosOptionsProps> = ({
     console.log(keyName + " " + value)
 
     if (category === "active") {
-      globalDocs?.setDocs((setKeyValues(globalDocs, value) as FinalTextDocuments))
+      globalDocs?.setDocs(setKeyValues(globalDocs, value) as FinalTextDocuments)
     }
     if (category === "pensioner") {
       pensionerDocs?.setDocs(setKeyValues(pensionerDocs, value) as PensionerDocuments)
@@ -69,13 +65,7 @@ const SelectComponent: FC<DocumentosOptionsProps> = ({
       </Select>
     )
   } else if (optionList.every((e: any) => typeof e === "object")) {
-    return (
-      <NestedSelect
-        optionList={optionList as OptionInt[]}
-        keyName={keyName}
-        category={category}
-      />
-    )
+    return <NestedSelect optionList={optionList as OptionInt[]} keyName={keyName} category={category} />
   }
 }
 

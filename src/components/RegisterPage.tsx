@@ -59,7 +59,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ category, title, documents 
     return () => {
       statusReset()
     }
-  }, [pathname])
+  }, [])
 
   const restartAction = () => {
     statusReset()
@@ -78,19 +78,18 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ category, title, documents 
               </Typography.Title>
             </Content>
             <Row key={pathname} gutter={[16, 8]}>
-              {documents && Object.keys(documents as {}).map((doc: string) => {
-                return (
-                  <DocumentOptions
-                    key={doc}
-                    name={documents[doc as keyof typeof documents]["name"]}
-                    keyName={doc}
-                    category={category}
-                    optionList={
-                      documents[doc as keyof typeof documents]["optionList"]
-                    }
-                  />
-                )
-              })}
+              {documents &&
+                Object.keys(documents as {}).map((doc: string) => {
+                  return (
+                    <DocumentOptions
+                      key={doc}
+                      name={documents[doc as keyof typeof documents]["name"]}
+                      keyName={doc}
+                      category={category}
+                      optionList={documents[doc as keyof typeof documents]["optionList"]}
+                    />
+                  )
+                })}
             </Row>
             <Content className="w-full flex justify-center">
               <TextModal category={category} />
@@ -98,13 +97,9 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ category, title, documents 
           </Space>
         </Col>
       </Row>
-      <FloatButton
-        icon={<ReloadOutlined />}
-        style={{ border: "1px solid #adadad" }}
-        onClick={() => restartAction()}
-      />
+      <FloatButton icon={<ReloadOutlined />} style={{ border: "1px solid #adadad" }} onClick={() => restartAction()} />
     </Content>
   )
 }
 
-export default RegisterPage 
+export default RegisterPage
