@@ -12,7 +12,7 @@ import { CopyOutlined } from "@ant-design/icons"
 import { TextFieldContext } from "../contexts/TextfieldContext"
 import { SecondCheckboxContext } from "../contexts/SecondCheckboxContext"
 import { PensionerContext } from "../contexts/PensionerContext"
-import { Category } from "./ActiveRegister"
+import { Category } from "./SubComponents/types/essentialTypes"
 
 import AditionalRejectText from "./SubComponents/AditionalRejectText"
 import EndText from "../utils/endTextGen"
