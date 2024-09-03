@@ -59,7 +59,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ category, title, documents 
     return () => {
       statusReset()
     }
-  }, [])
+  }, [pathname])
 
   const restartAction = () => {
     statusReset()
