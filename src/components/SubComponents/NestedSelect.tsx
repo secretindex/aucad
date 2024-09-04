@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import type { CascaderProps } from "antd"
 import { Cascader } from "antd"
-import { SecondCheckboxContext } from "../../contexts/SecondCheckboxContext"
+import { ActivesContext } from "../../contexts/SecondCheckboxContext"
 import { PensionerContext } from "../../contexts/PensionerContext"
 import { InactivesContext } from "../../contexts/InactivesContext"
 
@@ -21,7 +21,7 @@ interface NestedSelectProps {
 
 const NestedSelect: React.FC<NestedSelectProps> = ({ optionList, keyName, category }) => {
   const options: OptionInt[] = optionList
-  const globalDocs = useContext(SecondCheckboxContext)
+  const globalDocs = useContext(ActivesContext)
   const pensionerDocs = useContext(PensionerContext)
   const inactiveDocs = useContext(InactivesContext)
 

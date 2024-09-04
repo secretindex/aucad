@@ -19,7 +19,7 @@ export type InvalidDocuments = {
   "cnd/n": string,
 }
 
-const invalidDocuments: InvalidDocuments = {
+const invalidStandard: InvalidDocuments = {
   "cr/60": `Comprovante de residência emitido nos últimos 60 dias;\nObs: Comprovante enviado foi emitido em MES. Favor, enviar um comprovante recente`,
   "cr/n": "Comprovante de residência emitido nos últimos 60 dias + Declaração de Residência (anexo II no link abaixo) caso o comprovante esteja no nome de terceiros",
   "dr/n": `Declaração de Residência (anexo II no link abaixo)\nObs: Comprovante enviado está em nome de terceiros. Favor, assinar e enviar a declaração acima`,
@@ -52,7 +52,7 @@ export type InactiveStandard = {
 }
 
 
-export type StandardDocuments = {
+export type ActivesStandardType = {
   foto: string
   pis: string
   posse: string
@@ -62,7 +62,7 @@ export type StandardDocuments = {
   uniao: string
 }
 
-const standardDocuments: StandardDocuments = {
+const activesStandard: ActivesStandardType = {
   foto: "Foto do rosto de frente segurando documento de identidade ao lado",
   pis: "PIS/PASEP ou NIT",
   posse: "Termo de Posse",
@@ -73,4 +73,4 @@ const standardDocuments: StandardDocuments = {
     "Certidão de União Estável + Comprovante de estado civil anterior a união (caso fora solteiro, enviar certidão de nascimento. Caso fora casado/divorciado, enviar certidão de casamento com averbação",
 }
 
-export { invalidDocuments, standardDocuments }
+export { invalidStandard, activesStandard }

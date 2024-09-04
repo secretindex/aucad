@@ -6,9 +6,9 @@ import { RequiredDocs } from "./docsInterface"
 import {
   InactiveStandard,
   InvalidDocuments,
-  invalidDocuments,
-  StandardDocuments,
-  standardDocuments,
+  invalidStandard,
+  ActivesStandardType,
+  activesStandard,
 } from "./documents and models/pendingDocuments"
 
 import {
@@ -22,7 +22,7 @@ import { inactivesStandard } from "./documents and models/inactivesDocuments"
 
 type FieldsType = RequiredDocs | FinalTextDocuments | PensionerDocuments | PensionerCheck | InactivesDocuments
 
-class EndText {
+class RejectText {
   private upper: string = text.upperText
   private midText: string = ""
   private bottom: string = text.bottomText
@@ -55,11 +55,11 @@ class EndText {
         this.textFields.push(
           (this.fields as RequiredDocs)[i as keyof RequiredDocs] === true
             ? ""
-            : standardDocuments[i as keyof StandardDocuments]
+            : activesStandard[i as keyof ActivesStandardType]
         )
       } else {
         this.textFields.push(
-          invalidDocuments[(this.fields as FinalTextDocuments)[i as keyof FinalTextDocuments] as keyof InvalidDocuments]
+          invalidStandard[(this.fields as FinalTextDocuments)[i as keyof FinalTextDocuments] as keyof InvalidDocuments]
         )
       }
     }
@@ -77,7 +77,7 @@ class EndText {
         )
       } else {
         this.textFields.push(
-          invalidDocuments[(this.fields as InactivesDocuments)[i as keyof InactivesDocuments] as keyof InvalidDocuments]
+          invalidStandard[(this.fields as InactivesDocuments)[i as keyof InactivesDocuments] as keyof InvalidDocuments]
         )
       }
     }
@@ -104,4 +104,4 @@ class EndText {
   }
 }
 
-export default EndText
+export default RejectText

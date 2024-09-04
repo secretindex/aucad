@@ -1,7 +1,6 @@
-import { ComplexDocs } from "../../utils/docsInterface"
+import { ActivesDocs } from "../../utils/docsInterface"
 
-// I'll try to remove the obj keys "required" and "present" later
-const activesDocument: ComplexDocs = {
+const activesDocument: ActivesDocs = {
   foto: {
     name: "Foto + ID",
     required: true,

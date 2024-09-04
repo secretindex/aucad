@@ -21,29 +21,29 @@ export const documentsContext: FinalTextDocuments = {
   depId: 'dep/n'
 }
 
-export interface SecondCheckboxContentType {
+export interface ActivesContextType {
   docs: FinalTextDocuments
   setDocs: Dispatch<SetStateAction<FinalTextDocuments>>
 }
 
-const SecondCheckboxContext = createContext<
-  SecondCheckboxContentType | undefined
+const ActivesContext = createContext<
+  ActivesContextType | undefined
 >(undefined)
 
 interface ContextProps {
   children: ReactNode
 }
 
-const SecondCheckboxContextProvider: React.FC<ContextProps> = ({
+const ActivesContextProvider: React.FC<ContextProps> = ({
   children,
 }) => {
   const [docs, setDocs] = useState<FinalTextDocuments>(documentsContext)
 
   return (
-    <SecondCheckboxContext.Provider value={{ docs, setDocs }}>
+    <ActivesContext.Provider value={{ docs, setDocs }}>
       {children}
-    </SecondCheckboxContext.Provider>
+    </ActivesContext.Provider>
   )
 }
 
-export { SecondCheckboxContextProvider, SecondCheckboxContext }
+export { ActivesContextProvider, ActivesContext}

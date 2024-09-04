@@ -1,4 +1,4 @@
-import { Typography, Layout, Popover, List } from "antd"
+import { Typography, Layout, List } from "antd"
 
 import { Link as RouterLink } from "react-router-dom"
 import { GithubOutlined } from "@ant-design/icons"
@@ -6,32 +6,11 @@ import { GithubOutlined } from "@ant-design/icons"
 const { Content } = Layout
 const { Text, Title, Link } = Typography
 
-const popContent = (
-  <div>
-    <Text>Escute e/ou baixe de graça 🎶</Text>
-  </div>
-)
-
 const About = () => {
-
   return (
     <section className="p-5 flex flex-col">
       <Title level={2} style={{ fontSize: "1.5rem", margin: "0" }}>
-        Feito por
-        <Popover
-          placement="right"
-          content={popContent}
-          title="👈 Minhas músicas"
-        >
-          <Link
-            href="https://ckaeiront.bandcamp.com"
-            target="_blank"
-            style={{ fontSize: "inherit", color: "inherit" }}
-          >
-            {" "}
-            Caio Programas
-          </Link>
-        </Popover>
+        Feito por Caio Programas
       </Title>
       <Content className="my-3">
         <Title
@@ -52,13 +31,10 @@ const About = () => {
         </List>
       </Content>
       <RouterLink to={"/about/help"}>
-        <Text className="text-[#26a69a]">
-          Acesse as dicas e o tutorial aqui
-        </Text>
+        <Text className="text-[#26a69a]">Acesse as dicas e o tutorial aqui</Text>
       </RouterLink>
       <Text style={{ margin: "0 0 0.5rem 0" }}>
-        Baixe e modifique o código como quiser. Acesse o link do Repositório
-        abaixo.
+        Baixe e modifique o código como quiser. Acesse o link do Repositório abaixo.
       </Text>
       <Content className="w-fit">
         <Link

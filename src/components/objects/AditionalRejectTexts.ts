@@ -3,9 +3,9 @@ interface AditionalText {
   text: string
 }
 
-type AdTextArray = Array<AditionalText>
+type AdTextList = Array<AditionalText>
 
-const AditionalTexts: AdTextArray = [
+const AditionalTexts: AdTextList = [
   {
     name: "Número do Suporte",
     text: "Número do suporte: +55 (96) 3082-1277\nHorários: 08:00 às 17:00, segunda a sexta;",

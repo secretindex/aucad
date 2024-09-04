@@ -20,7 +20,7 @@ type PisPensionerValid = "pis/18/s" | "pis/nr"
 type IrpfValid = "dirpf/s" | "disirpf/s"
 type IrpfInvalid = "dirpf/n" | "dirpf/ca"
 
-interface FinalTextDocuments {
+interface ActivesDocuments {
   foto: boolean
   id: IDInvalid | IDValid
   residencia: ResidenceInvalid | ResidenceValid
@@ -55,4 +55,4 @@ export interface PensionerDocuments {
   decIRPF: IrpfInvalid | IrpfValid
 }
 
-export default FinalTextDocuments
+export default ActivesDocuments

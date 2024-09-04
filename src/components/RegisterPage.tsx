@@ -7,8 +7,8 @@ import React, { useContext, useEffect, useState } from "react"
 import { FloatButton, Typography, Row, Col, Space, Layout } from "antd"
 import TextModal from "./TextModal"
 
-import { ComplexDocs, InactivesInt, PensionerDocs } from "../utils/docsInterface"
-import { documentsContext, SecondCheckboxContext } from "../contexts/SecondCheckboxContext"
+import { ActivesDocs, InactivesInt, PensionerDocs } from "../utils/docsInterface"
+import { ActivesContext, documentsContext } from "../contexts/SecondCheckboxContext"
 import { InactivesContext, inactivesDefault } from "../contexts/InactivesContext"
 import { PensionerContext, pensionerContextDocs } from "../contexts/PensionerContext"
 import { useLocation } from "react-router-dom"
@@ -18,13 +18,13 @@ import { Category } from "./SubComponents/types/essentialTypes"
 interface RegisterPageProps {
   category: Category
   title: "Ativos" | "Inativos" | "Pensionistas"
-  documents: ComplexDocs | PensionerDocs | InactivesInt | undefined
+  documents: ActivesDocs | PensionerDocs | InactivesInt | undefined
 }
 
 const { Content } = Layout
 
 const RegisterPage: React.FC<RegisterPageProps> = ({ category, title, documents }) => {
-  const globalDocs = useContext(SecondCheckboxContext)
+  const globalDocs = useContext(ActivesContext)
   const pensionerDocs = useContext(PensionerContext)
   const inactiveDocs = useContext(InactivesContext)
 

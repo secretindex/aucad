@@ -178,7 +178,7 @@ export interface InactivesInt {
   }
 }
 
-export interface ComplexDocs {
+export interface ActivesDocs {
   foto: {
     name: string
     required: boolean

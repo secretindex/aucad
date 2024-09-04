@@ -1,18 +1,18 @@
 import { FC, useContext, useState } from "react"
 import { Select } from "antd"
 import NestedSelect, { OptionInt } from "./NestedSelect"
-import { SecondCheckboxContentType, SecondCheckboxContext } from "../../contexts/SecondCheckboxContext"
+import { ActivesContextType, ActivesContext} from "../../contexts/SecondCheckboxContext"
 import { PensionerContentType, PensionerContext } from "../../contexts/PensionerContext"
 import { DocumentosOptionsProps } from "./types/essentialTypes"
 import { InactivesContext, InactivesContextType } from "../../contexts/InactivesContext"
 import FinalTextDocuments, { InactivesDocuments, PensionerDocuments } from "../../utils/endTextObject"
 
-type DocsType = SecondCheckboxContentType | PensionerContentType | InactivesContextType
+type DocsType = ActivesContextType | PensionerContentType | InactivesContextType
 
 const { Option } = Select
 
 const SelectComponent: FC<DocumentosOptionsProps> = ({ keyName, optionList, category }) => {
-  const globalDocs = useContext(SecondCheckboxContext)
+  const globalDocs = useContext(ActivesContext)
   const pensionerDocs = useContext(PensionerContext)
   const inactiveDocs = useContext(InactivesContext)
   const [field, setField] = useState<string>("")
