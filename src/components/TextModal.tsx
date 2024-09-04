@@ -127,7 +127,7 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
     navigator.clipboard
       .writeText(text)
       .then(() => {
-        message.success("Text copied to clipboard!")
+        message.success("Copiado para área de transferência!")
       })
       .catch(() => {
         message.error("Failed to copy text.")
