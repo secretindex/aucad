@@ -24,11 +24,15 @@ const AditionalTexts: AdTextList = [
   },
   {
     name: "Comprovante desatualizado",
-    text: "Obs: Comprovante enviado foi emitido em MES. Favor, enviar um comprovante recente;",
+    text: "Obs: Comprovante enviado foi emitido em MES. Favor, enviar um comprovante dentro do prazo acima;",
   },
   {
     name: "Dec. de Res. Não Oficial",
     text: "Obs: Aceitamos apenas a declaração oficial da Amprev. Favor, assine e anexe ao cadastro;",
+  },
+  {
+    name: "CPF dependente",
+    text: "Obs: Enviar qualquer documento contendo o número do CPF do dependente;",
   },
   {
     name: "Identidade incompleta",
