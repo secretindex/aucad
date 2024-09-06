@@ -9,6 +9,7 @@ const Home = () => {
   const handleNavigate = () => {
     navigate("/ativos")
   }
+
   return (
     <section
       style={{

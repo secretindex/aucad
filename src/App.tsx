@@ -23,16 +23,22 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
 
-            <Route path="/ativos" element={<RegisterPage title="Ativos" category="active" documents={activesDocument} />}></Route>
-            <Route path="/inativos" element={<RegisterPage title="Inativos" category="inactive" documents={inactiveDocuments} />}></Route>
-            <Route path="/pensionistas" element={<RegisterPage title="Pensionistas" category="pensioner" documents={pensionerObj} />}></Route>
+            <Route
+              path="/ativos"
+              element={<RegisterPage title="Ativos" category="active" documents={activesDocument} />}
+            ></Route>
+            <Route
+              path="/inativos"
+              element={<RegisterPage title="Inativos" category="inactive" documents={inactiveDocuments} />}
+            ></Route>
+            <Route
+              path="/pensionistas"
+              element={<RegisterPage title="Pensionistas" category="pensioner" documents={pensionerObj} />}
+            ></Route>
 
             <Route path="/about" loader element={<About />}></Route>
             <Route path="/about/help" element={<Help />}></Route>
-            <Route
-              path="/about/contact"
-              element={<Contact />}
-            ></Route>
+            <Route path="/about/contact" element={<Contact />}></Route>
           </Routes>
         </section>
       </Router>
