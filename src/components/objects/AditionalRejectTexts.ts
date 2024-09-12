@@ -48,7 +48,7 @@ const AditionalTexts: AdTextList = [
   },
   {
     name: "Identidade ilegível",
-    text: "Obs: Documento de indentidade enviado está ilegível. Favor, enviar outra foto em melhor qualidade;",
+    text: "Obs: Documento de identidade enviado está ilegível. Favor, enviar outra foto em melhor qualidade;",
   },
 ]
 
