@@ -23,6 +23,10 @@ const AditionalTexts: AdTextList = [
     text: "Obs: Comprovante enviado não possui data de emissão. Favor, enviar outro comprovante dentro do prazo acima;",
   },
   {
+    name: "Declaração sem comprovante",
+    text: "Obs: Envie qualquer conta que, mesmo que não esteja em seu nome, coincida com o endereço escrito na declaração de residência enviada;",
+  },
+  {
     name: "Comprovante desatualizado",
     text: "Obs: Comprovante enviado foi emitido em MES. Favor, enviar um comprovante dentro do prazo acima;",
   },
