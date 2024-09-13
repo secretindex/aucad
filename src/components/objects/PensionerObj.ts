@@ -151,8 +151,8 @@ const pensionerObj: PensionerDocs = {
       },
       {
         label: "não requerido",
-        value: "cns/nr"
-      }
+        value: "cns/nr",
+      },
     ],
   },
   pis: {
@@ -184,6 +184,26 @@ const pensionerObj: PensionerDocs = {
     name: "Inacum. de Pensão",
     required: true,
     present: false,
+    optionList: [
+      {
+        label: "-18",
+        value: "dips/u",
+        children: [
+          {
+            label: "sim",
+            value: "dips/s",
+          },
+          {
+            label: "não",
+            value: "dips/n",
+          },
+        ],
+      },
+      {
+        label: "não requerido",
+        value: "dips/nr",
+      },
+    ],
   },
   decIRPF: {
     name: "Dec. IRPF",
@@ -200,24 +220,24 @@ const pensionerObj: PensionerDocs = {
             children: [
               {
                 label: "sim",
-                value: "dirpf/s"
+                value: "dirpf/s",
               },
               {
                 label: "não",
-                value: "dirpf/ca"
-              }
-            ]
+                value: "dirpf/ca",
+              },
+            ],
           },
           {
             label: "isento",
             value: "disirpf/s",
-          }
+          },
         ],
       },
       {
         label: "não",
-        value: "dirpf/n"
-      }
+        value: "dirpf/n",
+      },
     ],
   },
 }

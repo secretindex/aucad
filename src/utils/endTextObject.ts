@@ -20,6 +20,10 @@ type PisPensionerValid = "pis/18/s" | "pis/nr"
 type IrpfValid = "dirpf/s" | "disirpf/s"
 type IrpfInvalid = "dirpf/n" | "dirpf/ca"
 
+// Declaração de inacumulabilidade de pensão
+type DipsValid = "dips/s" | "dips/u" | "dips/nr"
+type DipsInvalid = "dips/n"
+
 interface ActivesDocuments {
   foto: boolean
   id: IDInvalid | IDValid
@@ -51,7 +55,7 @@ export interface PensionerDocuments {
   residencia: ResidenceInvalid | ResidenceValid
   pis: PisPensionerInvalid | PisPensionerValid
   estadoCivil: CivilStatusInvalid | CivilStatusValid
-  inacPen: boolean
+  inacPen: DipsValid | DipsInvalid
   decIRPF: IrpfInvalid | IrpfValid
 }
 
