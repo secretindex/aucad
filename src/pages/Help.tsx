@@ -7,6 +7,7 @@ const Help = () => {
   return (
     <>
       <ReactMarkdown className="markdown-body">
+        {`
 # Aucad - Auxiliar de Cadastro
 
 Aplicativo feito para verificar o cadastro com base no que **falta**, gerando uma mensagem automática de recusa.
@@ -29,6 +30,7 @@ A mensagem é editável. Caso você clique com o botão direito dentro do campo 
 - Alguns textos são modelos, como por exemplo, o texto para pedir o documento de identidade de algum dependente. Certifique-se de que você digitou o nome da pessoa no lugar do texto em maiúsculo.
 - Se você mudar de aba no aplicativo, as caixinhas selecionadas (da página principal) serão resetadas.
 - Apenas o botão de reset da página principal recarrega o aplicativo.
+          `}
       </ReactMarkdown>
     </>
   )
