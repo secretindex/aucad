@@ -38,7 +38,7 @@ Solteira - Certidão de nascimento`,
   "deco/n": "Enviar declaração de dependência econômica (Anexo V no link abaixo) do dependente DEP",
   "tgc/n": "Enviar termo de guarda do dependente DEP",
   "dp/21": "Em caso de dependente filho(a) com mais de 21 anos, é necessário que se envie laudo/atestado médico caso declarado inválido. Caso não, remover como dependente previdenciário",
-  "dep/id/n": "Enviar documento de identidade dos dependentes DEPS",
+  "dep/id/n": "Enviar documento de identificação dos dependentes DEPS",
   "dep/id/10": "Documento de identidade do dependente DEP foi emitido em ANO, ultrapassando o limite de 10 anos desde a data de emissão.\nCaso não haja nenhum outro documento de identidade para substituir (CNH, Conselho de Classe ou Passaporte), por favor, entre em contato com nossa central de suporte informando seu caso",
   "cnd/n": "Enviar certidão de nascimento do dependente DEP",
 }
