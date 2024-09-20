@@ -154,7 +154,10 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
           ></TextArea>
         </div>
         {showReject ? <AditionalRejectText mouseCoords={mouseCoords} /> : <></>}
-        <Button icon={<CopyOutlined />} onClick={handleCopy} className="absolute p-2 right-9 bottom-11"></Button>
+        <Button icon={<CopyOutlined />} onClick={handleCopy} className="absolute p-2 right-9 bottom-20"></Button>
+        <label className="block text-gray-600 mt-3">
+          Botão direito: mensagens adicionais
+        </label>
       </Modal>
     </>
   )
