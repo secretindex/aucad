@@ -11,8 +11,8 @@ import inactiveDocuments from "./components/objects/InactiveObj"
 
 import "./App.css"
 
-import RegisterPage from "./components/RegisterPage"
 import Home from "./pages/Home"
+import RegisterPage from "./components/RegisterPage"
 
 function App() {
   return (
