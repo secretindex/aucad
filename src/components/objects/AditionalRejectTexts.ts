@@ -1,4 +1,4 @@
-interface AditionalText {
+export interface AditionalText {
   name: string
   text: string
 }
