@@ -1,19 +1,16 @@
 import { ReloadOutlined } from "@ant-design/icons"
-import { TextFieldContext } from "../contexts/TextfieldContext"
 
 import DocumentOptions from "./SubComponents/DocumentOptions"
 
-import React, { useContext, useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { FloatButton, Typography, Row, Col, Space, Layout } from "antd"
 import TextModal from "./TextModal"
 
 import { ActivesDocs, InactivesInt, PensionerDocs } from "../utils/docsInterface"
-import { ActivesContext, documentsContext } from "../contexts/SecondCheckboxContext"
-import { InactivesContext, inactivesDefault } from "../contexts/InactivesContext"
-import { PensionerContext, pensionerContextDocs } from "../contexts/PensionerContext"
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 
 import { Category } from "./SubComponents/types/essentialTypes"
+import useAppReset from "../utils/useAppReset"
 
 interface RegisterPageProps {
   category: Category
@@ -23,29 +20,12 @@ interface RegisterPageProps {
 
 const { Content } = Layout
 
-const RegisterPage: React.FC<RegisterPageProps> = ({ category, title, documents }) => {
-  const globalDocs = useContext(ActivesContext)
-  const pensionerDocs = useContext(PensionerContext)
-  const inactiveDocs = useContext(InactivesContext)
-
+const RegisterPageRefactored: React.FC<RegisterPageProps> = ({ category, title, documents }) => {
   const { pathname } = useLocation()
+  const reset = useAppReset(category)
+  const navigate = useNavigate()
 
-  const textField = useContext(TextFieldContext)
   const [optionsWidth, setOptionsWidth] = useState<boolean>(false)
-
-  const statusReset = () => {
-    textField?.setText("")
-
-    if (category === "active") {
-      globalDocs?.setDocs(() => documentsContext)
-    }
-    if (category === "pensioner") {
-      pensionerDocs?.setDocs(pensionerContextDocs)
-    }
-    if (category === "inactive") {
-      inactiveDocs?.setDocs(inactivesDefault)
-    }
-  }
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -57,14 +37,13 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ category, title, documents 
     })
 
     return () => {
-      statusReset()
+      reset()
     }
   }, [pathname])
 
   const restartAction = () => {
-    statusReset()
-
-    window.location.reload()
+    reset()
+    navigate(0)
   }
 
   return (
@@ -102,4 +81,6 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ category, title, documents 
   )
 }
 
-export default RegisterPage
+export default RegisterPageRefactored
+
+

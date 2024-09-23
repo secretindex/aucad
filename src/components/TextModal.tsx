@@ -14,6 +14,7 @@ import { TextAreaRef } from "antd/es/input/TextArea"
 import { MouseCoords } from "../pages/TestPage"
 import { PasteTextContext } from "../contexts/PasteTextContext"
 import { InactivesContext } from "../contexts/InactivesContext"
+import ConfirmPopup from "./ConfirmPopup"
 
 const { TextArea } = Input
 
@@ -31,6 +32,8 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
   const [_messageApi, contextHolder] = message.useMessage()
 
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false)
+
   const textRef = useRef<TextAreaRef | null>(null)
 
   const [showReject, setShowReject] = useState<boolean>()
@@ -110,6 +113,10 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
     }
   }
 
+  const popupHandler = (state: boolean) => {
+    setIsPopupOpen(state)
+  }
+
   const showModal = () => {
     setIsModalOpen(true)
     generateText()
@@ -124,6 +131,8 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
   }
 
   const handleCopy = () => {
+    popupHandler(true)
+
     navigator.clipboard
       .writeText(text)
       .then(() => {
@@ -154,7 +163,19 @@ const TextModal: React.FC<TextModalProps> = ({ category }) => {
           ></TextArea>
         </div>
         {showReject ? <AditionalRejectText mouseCoords={mouseCoords} /> : <></>}
-        <Button icon={<CopyOutlined />} onClick={handleCopy} className="absolute p-2 right-9 bottom-20"></Button>
+        <div className="absolute right-9 bottom-20">
+          <div>
+            <Button icon={<CopyOutlined />} onClick={handleCopy}></Button>
+            <ConfirmPopup
+              title="Texto copiado"
+              category={category}
+              message="Deseja finalizar o cadastro?"
+              close={popupHandler}
+              closeModal={handleCancel}
+              isVisible={isPopupOpen}
+            />
+          </div>
+        </div>
         <label className="block text-gray-600 mt-3">Botão direito: mensagens adicionais</label>
       </Modal>
     </>
