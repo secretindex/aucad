@@ -15,6 +15,7 @@ const SelectComponent: FC<DocumentosOptionsProps> = ({ keyName, optionList, cate
   const globalDocs = useContext(ActivesContext)
   const pensionerDocs = useContext(PensionerContext)
   const inactiveDocs = useContext(InactivesContext)
+
   const [field, setField] = useState<string>("")
 
   const setKeyValues = (docs: DocsType, value: string) => {
