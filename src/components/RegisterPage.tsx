@@ -82,5 +82,3 @@ const RegisterPageRefactored: React.FC<RegisterPageProps> = ({ category, title, 
 }
 
 export default RegisterPageRefactored
-
-
