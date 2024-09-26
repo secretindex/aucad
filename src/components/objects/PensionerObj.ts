@@ -49,6 +49,10 @@ const pensionerObj: PensionerDocs = {
             value: "cr/60",
           },
           {
+            label: "declaração sem comprovante",
+            value: "cr/dsc"
+          },
+          {
             label: "terceiros",
             value: "cr/t",
             children: [
