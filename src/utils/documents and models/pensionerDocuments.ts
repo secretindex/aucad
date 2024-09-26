@@ -1,6 +1,7 @@
 export type InvalidPensioner = {
   "cr/60": string
   "cr/n": string
+  "cr/dsc": string
   "dr/n": string
   "id/10": string
   "pis/18/n": string
@@ -17,6 +18,7 @@ export type InvalidPensioner = {
 const invalidPensioner: InvalidPensioner = {
   "cr/60": `Comprovante de residência emitido nos últimos 60 dias;\nObs: Comprovante enviado foi emitido em MES. Favor, enviar um comprovante dentro prazo acima`,
   "cr/n": "Comprovante de residência emitido nos últimos 60 dias + Declaração de Residência (anexo II no link abaixo) caso o comprovante esteja no nome de terceiros",
+  "cr/dsc": "Comprovante de residência emitido nos últimos 60 dias;\nObs: Envie qualquer conta que, mesmo que não esteja em seu nome, coincida com o endereço escrito na declaração de residência enviada",
   "dr/n": `Declaração de Residência (anexo II no link abaixo)\nObs: Comprovante enviado está em nome de terceiros. Favor, assinar e enviar a declaração acima`,
   "id/10": `Documento de identidade;\nObs: Documento de identidade enviado foi emitido em ANO, ultrapassando o limite de 10 anos desde a data de emissão. Caso não haja outro documento para substituir (CNH, Conselho de Classe ou Passaporte), entre em contato com nosso suporte informando seu caso`,
   "pis/18/n": "Enviar comprovante de cadastro no PIS/PASEP ou NIT",
