@@ -1,7 +1,8 @@
-import { FC } from "react"
+import { FC, useContext } from "react"
 import useAppReset from "../utils/useAppReset"
 import { Category } from "./SubComponents/types/essentialTypes"
 import { useNavigate } from "react-router-dom"
+import { RegisterCounterContext } from "../contexts/RegisterCountContext"
 
 interface ConfirmProps {
   title: string
@@ -14,9 +15,14 @@ interface ConfirmProps {
 
 const ConfirmPopup: FC<ConfirmProps> = ({ title, category, message, close, closeModal, isVisible }) => {
   const reset = useAppReset(category)
+  const setCount = useContext(RegisterCounterContext)!.setCount
   const navigate = useNavigate()
 
   const handleConfirm = () => {
+    setCount((prev: number) => {
+      localStorage.setItem("count", String(prev++))
+      return prev++
+    })
     close(false)
     closeModal()
 
