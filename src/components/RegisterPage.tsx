@@ -11,6 +11,7 @@ import { useLocation, useNavigate } from "react-router-dom"
 
 import { Category } from "./SubComponents/types/essentialTypes"
 import useAppReset from "../utils/useAppReset"
+import RegisterCounter from "./RegisterCounter"
 
 interface RegisterPageProps {
   category: Category
@@ -77,6 +78,7 @@ const RegisterPageRefactored: React.FC<RegisterPageProps> = ({ category, title, 
         </Col>
       </Row>
       <FloatButton icon={<ReloadOutlined />} style={{ border: "1px solid #adadad" }} onClick={() => restartAction()} />
+      <RegisterCounter />
     </Content>
   )
 }
