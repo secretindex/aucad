@@ -24,6 +24,14 @@ Cada categoria possui seus respectivos campos obrigatórios e irá gerar uma men
 
 A mensagem é editável. Caso você clique com o botão direito dentro do campo de texto, aparecerá um pequeno menu em baixo do mouse, onde você pode selecionar textos adicionais para adicionar diretamente ao texto sem precisar digitar.
 
+### Sobre o contador
+
+O contador só vai funcionar se você clicar em _analisar_, _copiar_ e, logo em seguida, finalizar o cadastro no popup que aparece.
+
+O reset da página não influencia no contador e, caso você saia e volte no outro dia, a contagem estará salva no seu navegador.
+
+Caso você apague o cache ou clique no botão de reset, o contador voltará ao número 0
+
 ### Dicas
 
 - Não precisa selecionar "não" em todo documento que estiver faltando. Ele será requerido por padrão caso esteja vazio;
