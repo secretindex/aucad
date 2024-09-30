@@ -22,9 +22,9 @@ export type InvalidDocuments = {
 
 const invalidStandard: InvalidDocuments = {
   "cr/60": `Comprovante de residência emitido nos últimos 60 dias;\nObs: Comprovante enviado foi emitido em MES. Favor, enviar um comprovante dentro do prazo acima`,
-  "cr/n": "Comprovante de residência emitido nos últimos 60 dias + Declaração de Residência (anexo II no link abaixo) caso o comprovante esteja no nome de terceiros",
+  "cr/n": "Comprovante de residência emitido nos últimos 60 dias + Declaração de Residência (Anexo II no link abaixo) caso o comprovante esteja no nome de terceiros",
   "cr/dsc": "Comprovante de residência emitido nos últimos 60 dias;\nObs: Envie qualquer conta que, mesmo que não esteja em seu nome, coincida com o endereço escrito na declaração de residência enviada",
-  "dr/n": `Declaração de Residência (anexo II no link abaixo)\nObs: Comprovante enviado está em nome de terceiros. Favor, assinar e enviar a declaração acima`,
+  "dr/n": `Declaração de Residência (Anexo II no link abaixo)\nObs: Comprovante enviado está em nome de terceiros. Favor, assinar e enviar a declaração acima`,
   "id/10": `Documento de identidade;\nObs: Documento de identidade enviado foi emitido em ANO, ultrapassando o limite de 10 anos desde a data de emissão. Caso não haja outro documento para substituir (CNH, Conselho de Classe ou Passaporte), entre em contato com nosso suporte informando seu caso`,
   "id/n": "Documento de Identidade emitido nos últimos 10 anos (RG ou CNH ou Conselho de Classe ou Passaporte ou Carteira de Identidade Militar)",
   "cns/n": "Certidão de Nascimento",
@@ -52,7 +52,6 @@ export type InactiveStandard = {
   veracidade: string
   comprovanteEstado: string
 }
-
 
 export type ActivesStandardType = {
   foto: string

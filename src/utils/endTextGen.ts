@@ -43,7 +43,7 @@ class RejectText {
     }
 
     if (this.midText) {
-      return this.upper + "\n" + this.midText + this.bottom
+      return this.upper + "\n" + this.midText + (/anexo/i.test(this.midText) ? this.bottom : "")
     } else {
       return "Cadastro completo 👍"
     }
