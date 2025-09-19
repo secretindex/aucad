@@ -1,30 +1,12 @@
 import { ActivesDocs } from "../../utils/docsInterface"
 
 const activesDocument: ActivesDocs = {
-  foto: {
-    name: "Foto + ID",
-    required: true,
-    present: false,
-  },
   id: {
-    name: "Identidade",
-    required: true,
-    present: false,
-    options: undefined,
+    name: "Cadastro de Pessoa Física",
     optionList: [
       {
         label: "sim",
-        value: "id/s",
-        children: [
-          {
-            label: "valido",
-            value: "id/v",
-          },
-          {
-            label: "+ 10",
-            value: "id/10",
-          },
-        ],
+        value: "id/v",
       },
       {
         label: "não",

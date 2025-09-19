@@ -179,17 +179,8 @@ export interface InactivesInt {
 }
 
 export interface ActivesDocs {
-  foto: {
-    name: string
-    required: boolean
-    present: boolean
-    optionList?: NestedOption[]
-  }
   id: {
     name: string
-    required: boolean
-    present: boolean
-    options: "valido" | "+10" | undefined
     optionList: NestedOption[]
   }
   residencia: {
