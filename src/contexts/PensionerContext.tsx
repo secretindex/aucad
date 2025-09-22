@@ -14,8 +14,6 @@ export const pensionerContextDocs: PensionerDocuments = {
   residencia: "cr/n",
   estadoCivil: "cns/nr",
   pis: "pis/nr",
-  inacPen: "dips/nr",
-  decIRPF: "dirpf/n"
 }
 
 export interface PensionerContentType {

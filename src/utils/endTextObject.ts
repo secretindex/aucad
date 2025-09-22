@@ -59,8 +59,6 @@ export interface PensionerDocuments {
   residencia: ResidenceInvalid | ResidenceValid
   pis: PisPensionerInvalid | PisPensionerValid
   estadoCivil: CivilStatusInvalid | CivilStatusValid
-  inacPen: DipsValid | DipsInvalid
-  decIRPF: IrpfInvalid | IrpfValid
 }
 
 export default ActivesDocuments
