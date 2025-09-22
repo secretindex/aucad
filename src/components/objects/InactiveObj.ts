@@ -2,34 +2,49 @@ import { InactivesInt } from "../../utils/docsInterface"
 
 // I'll try to remove the obj keys "required" and "present" later
 const inactiveDocuments: InactivesInt = {
-  foto: {
-    name: "Foto + ID",
-    required: true,
-    present: false,
-  },
   id: {
-    name: "Identidade",
-    required: true,
-    present: false,
-    options: undefined,
+    name: "Cadastro de Pessoa Física",
     optionList: [
       {
         label: "sim",
-        value: "id/s",
+        value: "id/v",
+      },
+      {
+        label: "não",
+        value: "id/n",
+      },
+    ],
+  },
+  invalidez: {
+    name: "Pensão por Invalidez",
+    optionList: [
+      {
+        label: "sim",
+        value: "id/v",
         children: [
           {
-            label: "valido",
-            value: "id/v",
+            label: "com laudo",
+            value: "pinv/cl",
+            children: [
+              {
+                label: "atualizado (ok)",
+                value: "pinv/cla",
+              },
+              {
+                label: "desatualizado",
+                value: "pinv/cld",
+              },
+            ],
           },
           {
-            label: "+ 10",
-            value: "id/10",
+            label: "sem laudo",
+            value: "pinv/sl",
           },
         ],
       },
       {
         label: "não",
-        value: "id/n",
+        value: "pinv/n",
       },
     ],
   },
@@ -48,19 +63,15 @@ const inactiveDocuments: InactivesInt = {
             value: "cr/v",
           },
           {
-            label: "+60",
+            label: "desatualizado",
             value: "cr/60",
-          },
-          {
-            label: "declaração sem comprovante",
-            value: "cr/dsc"
           },
           {
             label: "terceiros",
             value: "cr/t",
             children: [
               {
-                label: "D. Res",
+                label: "Em nome do pai, mãe ou conjuge",
                 value: "dr/u",
                 children: [
                   {
@@ -148,7 +159,7 @@ const inactiveDocuments: InactivesInt = {
         value: "u/u",
         children: [
           {
-            label: "C. Nascimento",
+            label: "reconhecida",
             value: "nascimento",
             children: [
               {
@@ -160,24 +171,6 @@ const inactiveDocuments: InactivesInt = {
                 value: "un/n",
               },
             ],
-          },
-          {
-            label: "Div/Sep/Vi",
-            value: "dsv",
-            children: [
-              {
-                label: "sim",
-                value: "dsvu/s",
-              },
-              {
-                label: "não",
-                value: "dsvu/n",
-              },
-            ],
-          },
-          {
-            label: "não declarado",
-            value: "un/nd",
           },
         ],
       },
@@ -192,18 +185,13 @@ const inactiveDocuments: InactivesInt = {
     required: true,
     present: false,
   },
-  contracheque: {
-    name: "Contracheque",
+  tituloEleitor: {
+    name: "Título de Eleitor",
     required: true,
     present: false,
   },
-  veracidade: {
-    name: "Termo de Veracidade",
-    required: true,
-    present: false,
-  },
-  comprovanteEstado: {
-    name: "D. Estado Civil",
+  posse: {
+    name: "Portaria de Posse (cargo efetivo)",
     required: true,
     present: false,
   },
@@ -226,22 +214,16 @@ const inactiveDocuments: InactivesInt = {
                 value: "dep/id/v",
                 children: [
                   {
-                    label: "Dep. Eco",
-                    value: "deco/u",
+                    label: "Invalidez",
+                    value: "inv/i",
                     children: [
                       {
-                        label: "Decl. D. Eco",
-                        value: "deco/u3",
-                        children: [
-                          {
-                            label: "sim",
-                            value: "deco/s",
-                          },
-                          {
-                            label: "não",
-                            value: "deco/n",
-                          },
-                        ],
+                        label: "comprovado",
+                        value: "inv/sc",
+                      },
+                      {
+                        label: "não comprovado",
+                        value: "inv/nc",
                       },
                     ],
                   },
@@ -266,7 +248,7 @@ const inactiveDocuments: InactivesInt = {
                     ],
                   },
                   {
-                    label: "Filho + 21",
+                    label: "Filho +18",
                     value: "dp/21",
                   },
                   {
@@ -278,10 +260,6 @@ const inactiveDocuments: InactivesInt = {
               {
                 label: "não",
                 value: "dep/id/n",
-              },
-              {
-                label: "+ 10",
-                value: "dep/id/10",
               },
             ],
           },
@@ -306,6 +284,12 @@ const inactiveDocuments: InactivesInt = {
         value: "dep/n",
       },
     ],
+  },
+  portariaConcessao: {
+    name: "Portaria de Concessão de Benefício",
+    required: false,
+    present: false,
+    optionList: undefined,
   },
 }
 

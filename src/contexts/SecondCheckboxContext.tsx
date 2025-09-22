@@ -14,9 +14,10 @@ export const documentsContext: FinalTextDocuments = {
   residencia:"cr/n",
   estadoCivil: "cns/n",
   pis: false,
-  contracheque: false,
+  cnis: false,
   posse: false,
-  veracidade: false,
+  tituloEleitor: false,
+  reservista: false,
   comprovanteEstado: false,
   depId: 'dep/n'
 }

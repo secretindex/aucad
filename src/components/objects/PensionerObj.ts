@@ -1,28 +1,12 @@
 import { PensionerDocs } from "../../utils/docsInterface"
 
 const pensionerObj: PensionerDocs = {
-  foto: {
-    name: "Foto + ID",
-    present: false,
-  },
   id: {
-    name: "Identidade",
-    required: true,
-    present: false,
+    name: "Cadastro de Pessoa Física",
     optionList: [
       {
         label: "sim",
-        value: "id/s",
-        children: [
-          {
-            label: "valido",
-            value: "id/v",
-          },
-          {
-            label: "+ 10",
-            value: "id/10",
-          },
-        ],
+        value: "id/v",
       },
       {
         label: "não",
@@ -45,19 +29,15 @@ const pensionerObj: PensionerDocs = {
             value: "cr/v",
           },
           {
-            label: "+60",
+            label: "desatualizado",
             value: "cr/60",
-          },
-          {
-            label: "declaração sem comprovante",
-            value: "cr/dsc"
           },
           {
             label: "terceiros",
             value: "cr/t",
             children: [
               {
-                label: "D. Res",
+                label: "Em nome do pai, mãe ou conjuge",
                 value: "dr/u",
                 children: [
                   {
@@ -81,7 +61,7 @@ const pensionerObj: PensionerDocs = {
     ],
   },
   estadoCivil: {
-    name: "Estado civil",
+    name: "Conjuge/Companheiro",
     required: true,
     present: false,
     optionList: [
@@ -103,20 +83,6 @@ const pensionerObj: PensionerDocs = {
               },
             ],
           },
-          {
-            label: "C. Casamento Avb",
-            value: "cav/u",
-            children: [
-              {
-                label: "sim",
-                value: "cav/s",
-              },
-              {
-                label: "não",
-                value: "cav/n",
-              },
-            ],
-          },
         ],
       },
       {
@@ -124,7 +90,7 @@ const pensionerObj: PensionerDocs = {
         value: "u/u",
         children: [
           {
-            label: "C. Nascimento",
+            label: "reconhecida",
             value: "nascimento",
             children: [
               {
@@ -137,25 +103,11 @@ const pensionerObj: PensionerDocs = {
               },
             ],
           },
-          {
-            label: "Div/Sep/Vi",
-            value: "dsv",
-            children: [
-              {
-                label: "sim",
-                value: "dsvu/s",
-              },
-              {
-                label: "não",
-                value: "dsvu/n",
-              },
-            ],
-          },
         ],
       },
       {
-        label: "não requerido",
-        value: "cns/nr",
+        label: "não declarado",
+        value: "estc/nd",
       },
     ],
   },
@@ -163,87 +115,30 @@ const pensionerObj: PensionerDocs = {
     name: "PIS/PASEP ou NIT",
     required: true,
     present: false,
-    optionList: [
-      {
-        label: "+18",
-        value: "pis/18/u",
-        children: [
-          {
-            label: "sim",
-            value: "pis/18/s",
-          },
-          {
-            label: "não",
-            value: "pis/18/n",
-          },
-        ],
-      },
-      {
-        label: "nao necessario",
-        value: "pis/nr",
-      },
-    ],
   },
-  inacPen: {
-    name: "Inacum. de Pensão",
+  tituloEleitor: {
+    name: "Título de Eleitor",
     required: true,
     present: false,
-    optionList: [
-      {
-        label: "-18",
-        value: "dips/u",
-        children: [
-          {
-            label: "sim",
-            value: "dips/s",
-          },
-          {
-            label: "não",
-            value: "dips/n",
-          },
-        ],
-      },
-      {
-        label: "não requerido",
-        value: "dips/nr",
-      },
-    ],
   },
-  decIRPF: {
-    name: "Dec. IRPF",
+  certObito: {
+    name: "Certidão de Óbito",
+    required: true,
+    present: true
+  },
+  posseExServidor: {
+    name: "Portaria de Posse ex-servidor",
     required: true,
     present: false,
-    optionList: [
-      {
-        label: "sim",
-        value: "irpf/s",
-        children: [
-          {
-            label: "Ano/Exercício atual",
-            value: "dirpf/u",
-            children: [
-              {
-                label: "sim",
-                value: "dirpf/s",
-              },
-              {
-                label: "não",
-                value: "dirpf/ca",
-              },
-            ],
-          },
-          {
-            label: "isento",
-            value: "disirpf/s",
-          },
-        ],
-      },
-      {
-        label: "não",
-        value: "dirpf/n",
-      },
-    ],
+  },
+  portariaConcessao: {
+    name: "Portaria de Concessão de Benefício de Pensão",
+    required: false,
+    present: false,
+    optionList: undefined,
   },
 }
+
+
 
 export default pensionerObj

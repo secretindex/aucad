@@ -29,19 +29,15 @@ const activesDocument: ActivesDocs = {
             value: "cr/v",
           },
           {
-            label: "+60",
+            label: "desatualizado",
             value: "cr/60",
-          },
-          {
-            label: "declaração sem comprovante",
-            value: "cr/dsc"
           },
           {
             label: "terceiros",
             value: "cr/t",
             children: [
               {
-                label: "D. Res",
+                label: "Em nome do pai, mãe ou conjuge",
                 value: "dr/u",
                 children: [
                   {
@@ -129,7 +125,7 @@ const activesDocument: ActivesDocs = {
         value: "u/u",
         children: [
           {
-            label: "C. Nascimento",
+            label: "reconhecida",
             value: "nascimento",
             children: [
               {
@@ -141,24 +137,6 @@ const activesDocument: ActivesDocs = {
                 value: "un/n",
               },
             ],
-          },
-          {
-            label: "Div/Sep/Vi",
-            value: "dsv",
-            children: [
-              {
-                label: "sim",
-                value: "dsvu/s",
-              },
-              {
-                label: "não",
-                value: "dsvu/n",
-              },
-            ],
-          },
-          {
-            label: "não declarado",
-            value: "un/nd",
           },
         ],
       },
@@ -173,23 +151,28 @@ const activesDocument: ActivesDocs = {
     required: true,
     present: false,
   },
-  contracheque: {
-    name: "Contracheque",
+  tituloEleitor: {
+    name: "Título de Eleitor",
+    required: true,
+    present: false,
+  },
+  reservista: {
+    name: "Reservista",
     required: true,
     present: false,
   },
   posse: {
-    name: "Termo de Posse",
+    name: "Portaria de Posse",
     required: true,
     present: false,
   },
-  veracidade: {
-    name: "Termo de Veracidade",
+  cnis: {
+    name: "CNIS",
     required: true,
     present: false,
   },
-  comprovanteEstado: {
-    name: "D. Estado Civil",
+  escolaridade: {
+    name: "Comprovante de Escolaridade",
     required: true,
     present: false,
   },
@@ -212,24 +195,18 @@ const activesDocument: ActivesDocs = {
                 value: "dep/id/v",
                 children: [
                   {
-                    label: "Dep. Eco",
-                    value: "deco/u",
+                    label: "Invalidez",
+                    value: "inv/i",
                     children: [
                       {
-                        label: "Decl. D. Eco",
-                        value: "deco/u3",
-                        children: [
-                          {
-                            label: "sim",
-                            value: "deco/s",
-                          },
-                          {
-                            label: "não",
-                            value: "deco/n",
-                          },
-                        ],
+                        label: "comprovado",
+                        value: "inv/sc"
                       },
-                    ],
+                      {
+                        label: "não comprovado",
+                        value: "inv/nc"
+                      },
+                    ]
                   },
                   {
                     label: "Curatela/Guarda",
@@ -252,7 +229,7 @@ const activesDocument: ActivesDocs = {
                     ],
                   },
                   {
-                    label: "Filho + 21",
+                    label: "Filho +18",
                     value: "dp/21",
                   },
                   {
@@ -264,10 +241,6 @@ const activesDocument: ActivesDocs = {
               {
                 label: "não",
                 value: "dep/id/n",
-              },
-              {
-                label: "+ 10",
-                value: "dep/id/10",
               },
             ],
           },

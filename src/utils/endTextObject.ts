@@ -10,6 +10,9 @@ type ResidenceInvalid = "cr/60" | "dr/n" | "cr/n"
 type CivilStatusInvalid = "cns/n" | "cerc/n" | "cav/n" | "un/n" | "dsvu/n"
 type CivilStatusValid = "cns/s" | "cerc/s" | "cav/s" | "un/s" | "dsvu/s" | "cns/nr"
 
+// invalidez
+type InvalidezStatus = "pinv/n" | "pinv/s" | "pinv/cl" | "pinv/cla" | "pinv/cld"
+
 // Dependent
 type DependentTypeInvalid = "deco/n" | "dp/n" | "tgc/n" | "dp/21" | "dep/id/n" | "dep/id/10" | "cnd/n"
 type DependentTypeValid = "deco/s" | "dp/s" | "tgc/s" | "cnd/s" | "dep/n"
@@ -29,23 +32,24 @@ interface ActivesDocuments {
   id: IDInvalid | IDValid
   residencia: ResidenceInvalid | ResidenceValid
   estadoCivil: CivilStatusInvalid | CivilStatusValid
-  contracheque: boolean
   pis: boolean
+  cnis: boolean
   posse: boolean
-  veracidade: boolean
+  tituloEleitor: boolean
+  reservista: boolean
   comprovanteEstado: boolean
   depId: DependentTypeInvalid | DependentTypeValid
 }
 
 export interface InactivesDocuments {
-  foto: boolean
   id: IDInvalid | IDValid
   residencia: ResidenceInvalid | ResidenceValid
   estadoCivil: CivilStatusInvalid | CivilStatusValid
-  contracheque: boolean
+  invalidez: InvalidezStatus
   pis: boolean
-  veracidade: boolean
-  comprovanteEstado: boolean
+  posse: boolean
+  tituloEleitor: boolean
+  portariaConcessao: boolean
   depId: DependentTypeInvalid | DependentTypeValid
 }
 

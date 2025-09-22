@@ -73,16 +73,14 @@ interface NestedOption extends Option {
 }
 
 export interface PensionerDocs {
-  foto: {
+  id: {
     name: string
-    present: boolean
     optionList?: NestedOption[]
   }
-  id: {
+  certObito: {
     name: string
     required: boolean
     present: boolean
-    optionList?: NestedOption[]
   }
   residencia: {
     name: string
@@ -95,7 +93,6 @@ export interface PensionerDocs {
     name: string
     required: boolean
     present: boolean
-    optionList: NestedOption[]
   }
   estadoCivil: {
     name: string
@@ -103,13 +100,19 @@ export interface PensionerDocs {
     present: boolean
     optionList: NestedOption[]
   }
-  inacPen: {
+  portariaConcessao: {
     name: string
     required: boolean
     present: boolean
     optionList?: NestedOption[]
   }
-  decIRPF: {
+  tituloEleitor: {
+    name: string
+    required: boolean
+    present: boolean
+    optionList?: NestedOption[]
+  }
+  posseExServidor: {
     name: string
     required: boolean
     present: boolean
@@ -118,17 +121,12 @@ export interface PensionerDocs {
 }
 
 export interface InactivesInt {
-  foto: {
-    name: string
-    required: boolean
-    present: boolean
-    optionList?: NestedOption[]
-  }
   id: {
     name: string
-    required: boolean
-    present: boolean
-    options: "valido" | "+10" | undefined
+    optionList: NestedOption[]
+  }
+  invalidez: {
+    name: string
     optionList: NestedOption[]
   }
   residencia: {
@@ -151,19 +149,19 @@ export interface InactivesInt {
     present: boolean
     optionList?: NestedOption[]
   }
-  contracheque: {
+  portariaConcessao: {
     name: string
     required: boolean
     present: boolean
     optionList?: NestedOption[]
   }
-  veracidade: {
+  tituloEleitor: {
     name: string
     required: boolean
     present: boolean
     optionList?: NestedOption[]
   }
-  comprovanteEstado: {
+  posse: {
     name: string
     required: boolean
     present: boolean
@@ -203,7 +201,7 @@ export interface ActivesDocs {
     present: boolean
     optionList?: NestedOption[]
   }
-  contracheque: {
+  tituloEleitor: {
     name: string
     required: boolean
     present: boolean
@@ -215,13 +213,19 @@ export interface ActivesDocs {
     present: boolean
     optionList?: NestedOption[]
   }
-  veracidade: {
+  cnis: {
     name: string
     required: boolean
     present: boolean
     optionList?: NestedOption[]
   }
-  comprovanteEstado: {
+  reservista: {
+    name: string
+    required: boolean
+    present: boolean
+    optionList?: NestedOption[]
+  }
+  escolaridade: {
     name: string
     required: boolean
     present: boolean

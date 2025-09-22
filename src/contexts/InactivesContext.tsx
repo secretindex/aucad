@@ -9,14 +9,14 @@ import {
 import { InactivesDocuments } from "../utils/endTextObject"
 
 export const inactivesDefault: InactivesDocuments = {
-  foto: false,
   id: "id/n",
   residencia: "cr/n",
   estadoCivil: "cns/n",
+  invalidez: "pinv/n",
   pis: false,
-  contracheque: false,
-  veracidade: false,
-  comprovanteEstado: false,
+  posse: false,
+  tituloEleitor: false,
+  portariaConcessao: false,
   depId: "dep/n",
 }
 
