@@ -20,15 +20,9 @@ type DependentTypeValid = "deco/s" | "dp/s" | "tgc/s" | "cnd/s" | "dep/n"
 type PisPensionerInvalid = "pis/18/n"
 type PisPensionerValid = "pis/18/s" | "pis/nr"
 
-// type IrpfValid = "dirpf/s" | "disirpf/s"
-// type IrpfInvalid = "dirpf/n" | "dirpf/ca"
-
 type TitleInvalid = "titel/n" | "titel/m"
 
-// Declaração de inacumulabilidade de pensão
-
 type ReservistaValid = "res/s" | "res/n" | "res/nr"
-// type DipsInvalid = "dips/n"
 
 interface ActivesDocuments {
   foto: boolean

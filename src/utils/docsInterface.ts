@@ -81,6 +81,7 @@ export interface PensionerDocs {
     name: string
     required: boolean
     present: boolean
+    optionList?: NestedOption[]
   }
   residencia: {
     name: string
@@ -93,6 +94,7 @@ export interface PensionerDocs {
     name: string
     required: boolean
     present: boolean
+    optionList?: NestedOption[]
   }
   estadoCivil: {
     name: string
@@ -133,7 +135,7 @@ export interface InactivesInt {
   }
   invalidez: {
     name: string
-    optionList: NestedOption[]
+    optionList?: NestedOption[]
   }
   residencia: {
     name: string
