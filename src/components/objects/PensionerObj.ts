@@ -106,7 +106,7 @@ const pensionerObj: PensionerDocs = {
         ],
       },
       {
-        label: "não declarado",
+        label: "não considerar",
         value: "estc/nd",
       },
     ],
@@ -120,11 +120,46 @@ const pensionerObj: PensionerDocs = {
     name: "Título de Eleitor",
     required: true,
     present: false,
+    optionList: [
+      {
+        label: "maior de 18",
+        value: "titel/18",
+        children: [
+          {
+            label: "sim",
+            value: "titel/p"
+          },
+          {
+            label: "não",
+            value: "titel/n"
+          }
+        ]
+      },
+      {
+        label: "menor",
+        value: "titel/m"
+      }
+    ]
   },
   certObito: {
     name: "Certidão de Óbito",
     required: true,
     present: true
+  },
+  idExServidor: {
+    name: "Identidade ex-servidor",
+    required: true,
+    present: true,
+    optionList: [
+      {
+        label: "sim",
+        value: "idsf/s"
+      },
+      {
+        label: "não",
+        value: "idsf/n"
+      }
+    ]
   },
   posseExServidor: {
     name: "Portaria de Posse ex-servidor",

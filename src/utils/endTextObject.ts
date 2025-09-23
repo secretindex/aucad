@@ -20,12 +20,15 @@ type DependentTypeValid = "deco/s" | "dp/s" | "tgc/s" | "cnd/s" | "dep/n"
 type PisPensionerInvalid = "pis/18/n"
 type PisPensionerValid = "pis/18/s" | "pis/nr"
 
-type IrpfValid = "dirpf/s" | "disirpf/s"
-type IrpfInvalid = "dirpf/n" | "dirpf/ca"
+// type IrpfValid = "dirpf/s" | "disirpf/s"
+// type IrpfInvalid = "dirpf/n" | "dirpf/ca"
+
+type TitleInvalid = "titel/n" | "titel/m"
 
 // Declaração de inacumulabilidade de pensão
-type DipsValid = "dips/s" | "dips/u" | "dips/nr"
-type DipsInvalid = "dips/n"
+
+type ReservistaValid = "res/s" | "res/n" | "res/nr"
+// type DipsInvalid = "dips/n"
 
 interface ActivesDocuments {
   foto: boolean
@@ -36,7 +39,7 @@ interface ActivesDocuments {
   cnis: boolean
   posse: boolean
   tituloEleitor: boolean
-  reservista: boolean
+  reservista: ReservistaValid
   comprovanteEstado: boolean
   depId: DependentTypeInvalid | DependentTypeValid
 }
@@ -54,8 +57,12 @@ export interface InactivesDocuments {
 }
 
 export interface PensionerDocuments {
-  foto: boolean
+  posseExServidor: boolean
+  certObito: boolean
+  tituloEleitor: TitleInvalid
   id: IDInvalid | IDValid
+  idExServidor: "idsf/n" | "idsf/s"
+  portariaConcessao: boolean
   residencia: ResidenceInvalid | ResidenceValid
   pis: PisPensionerInvalid | PisPensionerValid
   estadoCivil: CivilStatusInvalid | CivilStatusValid

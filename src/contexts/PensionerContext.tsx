@@ -9,9 +9,13 @@ import {
 import { PensionerDocuments } from "../utils/endTextObject"
 
 export const pensionerContextDocs: PensionerDocuments = {
-  foto: false,
+  posseExServidor: false,
+  certObito: false,
+  portariaConcessao: false,
   id: "id/n",
+  idExServidor: "idsf/n",
   residencia: "cr/n",
+  tituloEleitor: "titel/m",
   estadoCivil: "cns/nr",
   pis: "pis/nr",
 }

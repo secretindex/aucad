@@ -160,6 +160,26 @@ const activesDocument: ActivesDocs = {
     name: "Reservista",
     required: true,
     present: false,
+    optionList: [
+      {
+        label: "Requerido",
+        value: "res/r",
+        children: [
+          {
+            label: "enviado",
+            value: "res/s"
+          },
+          {
+            label: "não enviado",
+            value: "res/n"
+          }
+        ]
+      },
+      {
+        label: "não requerido",
+        value: "res/nr"
+      }
+    ]
   },
   posse: {
     name: "Portaria de Posse",

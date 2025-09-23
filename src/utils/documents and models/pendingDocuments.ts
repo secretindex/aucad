@@ -19,6 +19,7 @@ export type InvalidDocuments = {
   "cnd/n": string
   "pinv/sl": string
   "pinv/cld": string
+  "res/n": string
 }
 
 const invalidStandard: InvalidDocuments = {
@@ -50,16 +51,12 @@ Solteira - Certidão de nascimento`,
   "dep/id/10":
     "Documento de identidade do dependente DEP foi emitido em ANO, ultrapassando o limite de 10 anos desde a data de emissão.\nCaso não haja nenhum outro documento de identidade para substituir (CNH, Conselho de Classe ou Passaporte), por favor, entre em contato com nossa central de suporte informando seu caso",
   "cnd/n": "Enviar certidão de nascimento do dependente DEP",
+  "res/n": "Apresentar o Certificado de Alistamento Militar ou Reservista, para servidores do sexo masculino, com idade entre 18 e 45 anos"
 }
 
 export type InactiveStandard = {
-  foto: string
   pis: string
   posse: string
-  cnis: string
-  contracheque: string
-  veracidade: string
-  comprovanteEstado: string
   escolaridade: string
 }
 

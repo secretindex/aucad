@@ -112,6 +112,12 @@ export interface PensionerDocs {
     present: boolean
     optionList?: NestedOption[]
   }
+  idExServidor: {
+    name: string
+    required: boolean
+    present: boolean
+    optionList?: NestedOption[]
+  }
   posseExServidor: {
     name: string
     required: boolean
