@@ -36,6 +36,18 @@ function App() {
               element={<RegisterPage title="Pensionistas" category="pensioner" documents={pensionerObj} />}
             ></Route>
 
+            <Route
+              path="/maragogi/ativos"
+              element={<RegisterPage title="Ativos" category="active" documents={activesDocument} />}
+            ></Route>
+            <Route
+              path="/maragogi/inativos"
+              element={<RegisterPage title="Inativos" category="inactive" documents={inactiveDocuments} />}
+            ></Route>
+            <Route
+              path="/maragogi/pensionistas"
+              element={<RegisterPage title="Pensionistas" category="pensioner" documents={pensionerObj} />}
+            ></Route>
             <Route path="/about" loader element={<About />}></Route>
             <Route path="/about/help" element={<Help />}></Route>
             <Route path="/about/contact" element={<Contact />}></Route>
